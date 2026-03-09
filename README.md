@@ -12,7 +12,7 @@ An **Intelligent Task Management System (ITMS)** — a realistic business applic
 
 The system enables teams to create, assign, and track tasks, manage task dependencies, monitor project progress, and identify bottlenecks — all key pain points for software teams working across multiple members and workstreams.
 
-**Core capabilities from [`req.md`](req.md):**
+**Core capabilities from [`requirement.md`](requirement.md):**
 
 | Capability | Description |
 |---|---|
@@ -23,7 +23,7 @@ The system enables teams to create, assign, and track tasks, manage task depende
 | **Filtering & Listing** | Query tasks by status, priority, assignee, or due date |
 | **Progress Summary** | Dashboard showing total, completed, in-progress, and blocked counts |
 
-> The requirement is already in [`req.md`](req.md). You do **not** need to write the application yourself — Copilot does the heavy lifting. Your job is to learn how to **direct Copilot effectively** through each SDLC phase.
+> The requirement is already in [`requirement.md`](requirement.md). You do **not** need to write the application yourself — Copilot does the heavy lifting. Your job is to learn how to **direct Copilot effectively** through each SDLC phase.
 
 ---
 
