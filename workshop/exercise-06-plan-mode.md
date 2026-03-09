@@ -10,7 +10,7 @@
 
 **Plan Mode** in GitHub Copilot is a deliberate step where Copilot analyzes the task, identifies all files and components affected, and presents an execution plan **before** taking any action. You review and approve — or modify — the plan before Copilot touches a single file.
 
-This is especially valuable for large tasks (like "implement the entire leave module") where you want to verify the approach first.
+This is especially valuable for large tasks (like "implement the entire task module") where you want to verify the approach first.
 
 ---
 
@@ -31,13 +31,13 @@ Copy and paste this prompt:
 ```
 Read doc/frd.md and doc/tsd.md carefully.
 
-Generate a complete, phased implementation plan for the Leave & Attendance Management System.
+Generate a complete, phased implementation plan for the Intelligent Task Management System (ITMS).
 
 Structure the plan as:
 - Phase 0: Project setup, folder structure, database migration tooling, CI skeleton
 - Phase 1: Authentication & User Management (registration, login, JWT, RBAC)
-- Phase 2: Leave Management (leave types, requests, approvals, balances)
-- Phase 3: Attendance Tracking (check-in, check-out, daily summaries)
+- Phase 2: Task Management (task creation, assignment, dependencies, status tracking)
+- Phase 3: Task Reporting & Progress Summary (project progress, task filters, export)
 - Phase 4: Notifications (email via SendGrid, Teams webhooks)
 - Phase 5: Reporting (monthly reports, CSV/PDF export)
 - Phase 6: Testing, security hardening, and documentation

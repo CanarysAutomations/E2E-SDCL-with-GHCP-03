@@ -16,7 +16,7 @@ Think of it as your team's coding standards, permanently injected into Copilot's
 
 ## Step 1 — Decide Your Language & Framework
 
-Choose the tech stack you want to build the LAMS application with:
+Choose the tech stack you want to build the ITMS application with:
 
 | Option | Language | Framework | Database |
 |--------|----------|-----------|----------|

@@ -63,13 +63,13 @@ Select **GitHub MCP** from the list, or add it manually:
 If you don't have a repository yet, create one:
 
 ```
-Using the GitHub MCP, create a new repository named "lams-app" with:
-- Description: "Leave & Attendance Management System — Workshop App"
+Using the GitHub MCP, create a new repository named "itms-app" with:
+- Description: "Intelligent Task Management System — Workshop App"
 - Private repository
 - Initialize with a README
 ```
 
-Note your repository as `[your-username]/lams-app` — you'll need this.
+Note your repository as `[your-username]/itms-app` — you'll need this.
 
 ---
 
@@ -82,7 +82,7 @@ In Copilot Chat, type `/` and select **GitHub Issues Generator** (from `.github/
 Or manually send this prompt:
 
 ```
-Read doc/implementation-plan.md and convert it into GitHub Issues for the repository [YOUR-USERNAME]/lams-app.
+Read doc/implementation-plan.md and convert it into GitHub Issues for the repository [your-username]/itms-app.
 
 For each task in the implementation plan, create a GitHub issue with:
 - A clear title
@@ -101,7 +101,7 @@ Use the GitHub MCP to create them directly.
 
 ## Step 2 — Verify on GitHub
 
-Open your repository on GitHub (https://github.com/[your-username]/lams-app/issues) and verify:
+Open your repository on GitHub (https://github.com/[your-username]/itms-app/issues) and verify:
 
 - [ ] Milestones created for each Phase
 - [ ] Issues have labels (backend, database, etc.)
@@ -114,7 +114,7 @@ Open your repository on GitHub (https://github.com/[your-username]/lams-app/issu
 
 ```
 Using the GitHub MCP, add all the Phase 1 issues to a new GitHub Project board 
-called "LAMS Sprint 1". Set up three columns: To Do, In Progress, Done.
+called "ITMS Sprint 1". Set up three columns: To Do, In Progress, Done.
 ```
 
 ---

@@ -27,7 +27,7 @@ In Copilot Chat:
 
 ---
 
-## Step 2 — Assign the Leave Approval API Task
+## Step 2 — Assign the Task Assignment API Task
 
 This task is a good background candidate because it's:
 - Self-contained (doesn't depend on your current work)
@@ -37,41 +37,41 @@ This task is a good background candidate because it's:
 Copy and paste this prompt into the Background Agent:
 
 ```
-You are working in the LAMS (Leave & Attendance Management System) project.
+You are working in the ITMS (Intelligent Task Management System) project.
 
 Read:
-- doc/tsd.md (API design section — Leave Approval endpoints)
-- doc/frd.md (Use Cases UC-002 Leave Approval, UC-003 Leave Cancellation)
+- doc/tsd.md (API design section — Task Assignment and Dependency endpoints)
+- doc/frd.md (Use Cases UC-002 Task Assignment, UC-003 Task Dependency Management)
 - .github/copilot-instructions.md (coding standards)
 - The existing code in src/ to understand the folder structure and patterns
 
-Implement the Leave Approval workflow:
+Implement the Task Assignment workflow:
 
-1. PUT /api/v1/leave/requests/:id/approve
-   - Auth required: Manager role only
-   - Manager can only approve requests from their direct reports
-   - Updates request status to "MANAGER_APPROVED"
-   - Deducts from employee's leave balance
-   - Triggers notification stub (log the notification event)
+1. PATCH /api/v1/tasks/:id/assign
+   - Auth required: any role
+   - Accepts: { assignedUserId }
+   - Reassigns the task to the specified user
+   - Records previous assignee in task history
+   - Triggers notification stub (log the reassignment event)
 
-2. PUT /api/v1/leave/requests/:id/reject
-   - Auth required: Manager or HR Admin role
-   - Requires a rejection reason in the body
-   - Updates request status to "REJECTED"
-   - Does NOT deduct leave balance
+2. POST /api/v1/tasks/:id/dependencies
+   - Auth required: any role
+   - Accepts: { dependsOnTaskId }
+   - Creates a dependency link between tasks
+   - If dependsOnTaskId is not Completed, marks the task as Blocked
 
-3. PUT /api/v1/leave/requests/:id/hr-approve
-   - Auth required: HR Admin only
-   - Final approval step after manager approval
-   - Updates request status to "APPROVED"
+3. DELETE /api/v1/tasks/:id/dependencies/:dependencyId
+   - Auth required: any role
+   - Removes the dependency link
+   - Re-evaluates blocked status of the task
 
-4. DELETE /api/v1/leave/requests/:id (Cancel)
-   - Auth required: Employee (their own), Manager (team's), HR Admin (any)
-   - Can only cancel PENDING or APPROVED requests
-   - If cancelling APPROVED, restore the leave balance
-   - Cannot cancel requests in the past
+4. PATCH /api/v1/tasks/:id/status
+   - Auth required: any role
+   - Accepts: { status } (To Do / In Progress / Blocked / Completed)
+   - Validates allowed status transitions
+   - Records status change in task history
 
-Follow the same patterns as the existing auth and leave request endpoints.
+Follow the same patterns as the existing auth and task endpoints.
 Create service, repository, and any new model files needed.
 Open a pull request with all changes when done.
 ```
@@ -94,8 +94,8 @@ When the background agent finishes (typically 5–15 minutes for this task), it 
 
 Review the PR:
 - [ ] All 4 endpoints are implemented
-- [ ] Role checks are correct (manager can't approve HR-level, employee can't approve own)
-- [ ] Leave balance is adjusted on approval and restored on cancellation
+- [ ] Dependency blocking logic works correctly (task becomes Blocked when dependency is incomplete)
+- [ ] Task history records all assignment and status changes
 - [ ] Code follows the same patterns as the existing `src/` files
 
 Merge the PR if it looks correct.
@@ -104,7 +104,7 @@ Merge the PR if it looks correct.
 
 ## Key Takeaway
 
-> Background Agent is a **parallel workstream**. On a real project, you might assign 4–5 long tasks to background agents (e.g., write all CRUD for users, write all CRUD for leave types, write all notifications, generate all tests) while you focus on the complex business logic. Each background agent opens a PR, you review and merge. This compresses days of work into hours.
+> Background Agent is a **parallel workstream**. On a real project, you might assign 4–5 long tasks to background agents (e.g., write all CRUD for users, write all CRUD for task priorities, write all notifications, generate all tests) while you focus on the complex business logic. Each background agent opens a PR, you review and merge. This compresses days of work into hours.
 
 ---
 

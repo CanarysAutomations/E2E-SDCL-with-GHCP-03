@@ -21,9 +21,9 @@ You will create three agents:
 
 ## Step 1 — Review the Starting Requirement
 
-Open [`req.md`](../req.md) and read the project requirement. This is the **single source of truth** for everything you build in this workshop.
+Open [`requirement.md`](../requirement.md) and read the project requirement. This is the **single source of truth** for everything you build in this workshop.
 
-> Take 1 minute to read it. Notice the stakeholders, leave types, and technical constraints. These will all show up in the documents Copilot generates.
+> Take 1 minute to read it. Notice the stakeholders, task types, and technical constraints. These will all show up in the documents Copilot generates.
 
 ---
 
@@ -73,7 +73,7 @@ Transform raw project requirements into a professional, traceable BRD that drive
 
 ## Process
 
-1. Read `req.md` in the workspace root (or any requirement file the user points you to)
+1. Read `requirement.md` in the workspace root (or any requirement file the user points you to)
 2. Identify business objectives, stakeholders, scope, and functional/non-functional requirements
 3. Create the directory `doc/` if it does not exist
 4. Create the BRD as `doc/brd.md`
@@ -120,7 +120,7 @@ You are a Senior Business Analyst with 15+ years of experience writing Business 
 Transform raw project requirements into a professional, traceable BRD.
 
 ## Process
-1. Read `req.md` in the workspace root
+1. Read `requirement.md` in the workspace root
 2. Identify business objectives, stakeholders, scope, and requirements
 3. Create `doc/brd.md`
 
@@ -164,7 +164,7 @@ Transform business requirements and BRD into a precise technical blueprint cover
 
 ## Process
 
-1. Read `doc/brd.md` and `req.md` to understand business context
+1. Read `doc/brd.md` and `requirement.md` to understand business context
 2. Design the technical architecture based on stated constraints and NFRs
 3. Create the directory `doc/` if it does not exist
 4. Create the TSD as `doc/tsd.md`
@@ -226,7 +226,7 @@ You are a Senior Software Architect specializing in enterprise system design, RE
 Transform business requirements into a precise technical blueprint.
 
 ## Process
-1. Read `doc/brd.md` and `req.md`
+1. Read `doc/brd.md` and `requirement.md`
 2. Design the technical architecture
 3. Create `doc/tsd.md`
 
@@ -271,7 +271,7 @@ Transform the BRD and TSD into a detailed Functional Requirements Document that 
 
 1. Read `doc/brd.md` for business requirements
 2. Read `doc/tsd.md` for technical context and API/data design
-3. Read `req.md` for original requirements
+3. Read `requirement.md` for original requirements
 4. Create the directory `doc/` if it does not exist
 5. Create the FRD as `doc/frd.md`
 

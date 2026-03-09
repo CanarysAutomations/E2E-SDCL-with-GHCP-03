@@ -78,7 +78,7 @@ Now test how the context map improves Copilot's responses. Send this prompt:
 
 ```
 Using the context map in .github/skills/context-map/context-map.md, answer:
-1. Which file handles leave balance deduction?
+1. Which file handles task dependency blocking?
 2. Where is the JWT authentication middleware?
 3. What database tables are currently defined?
 4. What's the response format for all API endpoints?

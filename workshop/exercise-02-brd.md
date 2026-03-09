@@ -2,13 +2,13 @@
 
 **Duration**: 4 minutes  
 **Copilot Feature**: BRD Custom Agent  
-**Goal**: Use the BRD agent to generate a professional BRD from `req.md`.
+**Goal**: Use the BRD agent to generate a professional BRD from `requirement.md`.
 
 ---
 
 ## Background
 
-Now that your `BRD Author` agent is set up, you'll use it to produce a formal Business Requirements Document. The agent will read `req.md`, apply BA best practices, structure the document properly, and save it to `doc/brd.md` — without you writing a single line.
+Now that your `BRD Author` agent is set up, you'll use it to produce a formal Business Requirements Document. The agent will read `requirement.md`, apply BA best practices, structure the document properly, and save it to `doc/brd.md` — without you writing a single line.
 
 ---
 
@@ -42,7 +42,7 @@ Make sure to:`
 ## Step 3 — Review Copilot's Plan
 
 The agent will show you a **plan** before writing. Review it to ensure:
-- It understood the domain (leave management)
+- It understood the domain (task management)
 - It plans to create `doc/brd.md`
 - It isn't proposing any code
 
@@ -57,8 +57,8 @@ Once Copilot finishes, open `doc/brd.md`. Check:
 - [ ] Executive Summary captures the business problem
 - [ ] At least 10 functional requirements numbered BR-F-001…
 - [ ] Non-functional requirements have measurable criteria (e.g., "response time < 2 seconds")
-- [ ] All leave types from `requirement.md` are captured
-- [ ] A stakeholder table exists with Employee, Manager, HR Admin, IT Admin rows
+- [ ] All task features from `requirement.md` are captured
+- [ ] A stakeholder table exists with Developer, Team Lead, Project Manager, QA Engineer rows
 
 ---
 

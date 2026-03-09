@@ -52,9 +52,9 @@ Open it and read it. Notice:
 Now create **your own** version tailored to your chosen tech stack. In Copilot Chat (default agent), send:
 
 ```
-Create a prompt file at .github/prompts/lams-implementation-plan.prompt.md
+Create a prompt file at .github/prompts/itms-implementation-plan.prompt.md
 
-This prompt is specifically for the Leave & Attendance Management System (LAMS) project.
+This prompt is specifically for the Intelligent Task Management System (ITMS) project.
 When invoked, it should:
 1. Read doc/frd.md and doc/tsd.md
 2. Generate a phased implementation plan with our specific tech stack: [YOUR STACK e.g. TypeScript/Express/PostgreSQL]
@@ -75,7 +75,7 @@ Format: phases as H2 headers, tasks as a table with columns: ID | Task | Effort 
 Test your new prompt file:
 
 1. In Copilot Chat, type `/` — the command palette opens
-2. Type `lams` — you should see **lams-implementation-plan** appear
+2. Type `itms` — you should see **itms-implementation-plan** appear
 3. Select it and press Enter
 4. Copilot executes the prompt and generates a fresh implementation plan
 
@@ -85,7 +85,7 @@ Test your new prompt file:
 
 Notice the difference between:
 - The generic `.github/prompts/implementation-plan.prompt.md` (for any project)
-- Your project-specific `lams-implementation-plan.prompt.md` (LAMS-specific folder conventions, stack, tools)
+- Your project-specific `itms-implementation-plan.prompt.md` (ITMS-specific folder conventions, stack, tools)
 
 > This is why teams maintain both generic prompt libraries and project-specific ones.
 
@@ -93,7 +93,7 @@ Notice the difference between:
 
 ## Key Takeaway
 
-> Prompt files turn one-time instructions into team assets. Instead of one person knowing "the right way to ask Copilot for an implementation plan," the whole team has a `/lams-implementation-plan` command they can invoke consistently. This is how you scale Copilot adoption across a team.
+> Prompt files turn one-time instructions into team assets. Instead of one person knowing "the right way to ask Copilot for an implementation plan," the whole team has a `/itms-implementation-plan` command they can invoke consistently. This is how you scale Copilot adoption across a team.
 
 ---
 

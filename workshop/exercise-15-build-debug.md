@@ -17,7 +17,7 @@ The local agent can run terminal commands, read their output, diagnose errors, a
 In Copilot Chat (Agent mode), send:
 
 ```
-Let's build and run the LAMS application. 
+Let's build and run the ITMS application. 
 
 1. First, install all dependencies using the appropriate package manager
 2. Then run the build/compile step if applicable (TypeScript tsc, Maven compile, etc.)
@@ -66,10 +66,10 @@ Show me the final coverage report.
 Try a deliberate debugging exercise. Send:
 
 ```
-Make a POST request to /api/v1/leave/requests using curl with:
+Make a POST request to /api/v1/tasks using curl with:
 - A valid JWT token for an employee
-- A leave request for next Monday to next Friday
-- leaveType: Annual Leave
+- A task due next Friday
+- priority: High, title: "Implement Payment API"
 
 Show me the curl command, the response, and the server logs.
 If the response is not a 201 with a PENDING request, diagnose and fix the issue.
@@ -102,16 +102,16 @@ For any failing integration tests, diagnose and fix, referencing the original Gh
 Send a final validation prompt:
 
 ```
-Do an end-to-end manual test of the core leave request flow:
+Do an end-to-end manual test of the core task management flow:
 
 1. Login as employee (POST /api/v1/auth/login)
-2. Submit a leave request (POST /api/v1/leave/requests)  
+2. Create a task (POST /api/v1/tasks)  
 3. Login as the employee's manager
-4. View pending requests (GET /api/v1/leave/requests)
-5. Approve the request (PUT /api/v1/leave/requests/:id/approve)
+4. View task list (GET /api/v1/tasks)
+5. Update task status to In Progress (PATCH /api/v1/tasks/:id/status)
 6. Login as HR Admin and give final approval
 7. Login as the employee again and verify the request is now APPROVED
-8. Verify the leave balance has been reduced
+8. Verify the task status is now Completed and history shows the status progression
 
 Show me each curl command and response. The complete flow must work without errors.
 ```

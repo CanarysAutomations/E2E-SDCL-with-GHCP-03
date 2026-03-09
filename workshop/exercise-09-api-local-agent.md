@@ -29,7 +29,7 @@ Send this prompt:
 ```
 Read doc/tsd.md and .github/copilot-instructions.md.
 
-Scaffold the initial project structure for the LAMS REST API. Create:
+Scaffold the initial project structure for the ITMS REST API. Create:
 - The root configuration files (package.json / pyproject.toml / pom.xml — match the stack from copilot-instructions.md)
 - The folder structure: src/routes/, src/controllers/, src/services/, src/repositories/, src/models/, src/middleware/, src/config/
 - A basic Express/FastAPI/Spring Boot app entry point that starts on port 3000 / 8000
@@ -76,30 +76,29 @@ Apply all standards from .github/copilot-instructions.md:
 
 ---
 
-## Step 4 — Implement the Leave Request API
+## Step 4 — Implement the Task Management API
 
 Send this prompt:
 
 ```
-Implement the Leave Request API endpoints from doc/tsd.md.
+Implement the Task Management API endpoints from doc/tsd.md.
 
 Create:
-1. POST /api/v1/leave/requests
-   - Auth required: Employee or Manager role
-   - Accepts: { leaveTypeId, startDate, endDate, reason }
-   - Validates: startDate must be in future, endDate >= startDate, reason required
-   - Validates: employee has sufficient leave balance for the requested type
-   - Returns: created leave request with status "PENDING"
+1. POST /api/v1/tasks
+   - Auth required: any role
+   - Accepts: { title, description, priority, assignedUserId, dueDate }
+   - Validates: title required, priority must be Low/Medium/High, dueDate must be valid
+   - Returns: created task with status "To Do"
 
-2. GET /api/v1/leave/requests
+2. GET /api/v1/tasks
    - Auth required
-   - Employees see only their own requests
-   - Managers see their team's requests
-   - HR Admin sees all requests
-   - Query params: status, startDate, endDate, page, limit
+   - Query params: status, priority, assignedUserId, dueDate, page, limit
 
-3. GET /api/v1/leave/requests/:id
-   - Returns single request; access controlled by role
+3. PATCH /api/v1/tasks/:id/status
+   - Auth required
+   - Accepts: { status } (To Do / In Progress / Blocked / Completed)
+   - Records status change in history
+   - Returns: updated task
 
 Create the corresponding service, repository, and model/schema files.
 Follow the folder structure created in the previous step.
@@ -114,8 +113,8 @@ Once the agent finishes, send:
 ```
 Start the application in the terminal and test all three endpoints with curl:
 1. Test POST /api/v1/auth/login with valid credentials
-2. Test POST /api/v1/leave/requests with the JWT from step 1
-3. Test GET /api/v1/leave/requests to see the pending request
+2. Test POST /api/v1/tasks with the JWT from step 1
+3. Test GET /api/v1/tasks to see the created task
 
 Show me the curl commands and expected responses.
 ```

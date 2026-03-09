@@ -28,8 +28,8 @@ Read #brd.md and #requirement.md, then create a complete Technical Specification
 
 Requirements:
 - Include a Mermaid system architecture diagram showing all major components
-- Include a Mermaid ER diagram for the database schema (include all tables needed for leave management)
-- Design REST API endpoints for: authentication, user management, leave requests, leave approvals, attendance, and reporting
+- Include a Mermaid ER diagram for the database schema (include all tables needed for task management)
+- Design REST API endpoints for: authentication, user management, task management, task assignment, task dependencies, and reporting
 - Recommend a technology stack with justifications (consider the Azure deployment constraint from #requirement.md)
 - Include security architecture addressing the OWASP Top 10
 - Define a CI/CD pipeline architecture
@@ -58,7 +58,7 @@ The system needs to handle email notifications and Teams webhook alerts.
 Update the Integration Points section in doc/tsd.md to cover:
 - SendGrid for email (async via a message queue)
 - Microsoft Teams webhook for manager alerts
-- Include a sequence diagram showing the leave approval notification flow
+- Include a sequence diagram showing the task status update notification flow
 ```
 
 ---

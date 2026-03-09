@@ -2,7 +2,7 @@
 
 **Duration**: 5 minutes  
 **Copilot Feature**: DevOps Custom Agent + Prompt Files  
-**Goal**: Use the DevOps agent to generate Docker, Terraform/Bicep, and GitHub Actions pipelines for the LAMS application.
+**Goal**: Use the DevOps agent to generate Docker, Terraform/Bicep, and GitHub Actions pipelines for the ITMS application.
 
 ---
 
@@ -56,7 +56,7 @@ Build and verify the Docker image can be built successfully.
 Send this prompt:
 
 ```
-Create Azure Bicep templates in infra/bicep/ for the LAMS production environment.
+Create Azure Bicep templates in infra/bicep/ for the ITMS production environment.
 
 The infrastructure should match the TSD deployment architecture.
 
@@ -73,7 +73,7 @@ Security requirements:
 - Container App uses managed identity to access Key Vault (no secrets in env vars)
 - PostgreSQL only accessible from within the VNet (no public endpoint)
 - Container Registry uses admin-disabled, access via managed identity only
-- All resources tagged: environment, project=LAMS, owner
+- All resources tagged: environment, project=ITMS, owner
 
 Also create infra/bicep/README.md with:
 - Prerequisites (Azure CLI, Bicep CLI versions)
@@ -170,7 +170,7 @@ You have completed the full E2E SDLC using GitHub Copilot:
 |-------|--------|
 | Planning | `doc/brd.md`, `doc/tsd.md`, `doc/frd.md` |
 | Project Management | GitHub Issues via MCP |
-| Development | `src/` — REST APIs with auth, leave management, attendance |
+| Development | `src/` — REST APIs with auth, task management, dependencies, and reporting |
 | Database | `db/migrations/`, `db/procedures/`, stored procedures with PL/SQL |
 | Testing | `tests/` — unit + integration tests from FRD acceptance criteria |
 | Security | OWASP review report, vulnerability fixes |
