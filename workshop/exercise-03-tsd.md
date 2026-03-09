@@ -55,7 +55,7 @@ Open `doc/tsd.md` and verify:
 
 - [ ] Mermaid architecture diagram renders correctly in VS Code preview (`Ctrl+Shift+V`)
 - [ ] ER diagram includes tables: `users`, `leave_requests`, `leave_balances`, `leave_types`, `attendance_records` (or similar)
-- [ ] At least 15 API endpoints are listed in the endpoint catalogue
+- [ ] API endpoints are listed in the endpoint catalogue
 - [ ] Security section mentions JWT, RBAC, and at least 3 OWASP categories
 - [ ] Technology stack table exists with justifications
 
