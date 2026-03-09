@@ -75,7 +75,7 @@ Format: phases as H2 headers, tasks as a table with columns: ID | Task | Effort 
 Test your new prompt file:
 
 1. In Copilot Chat, type `/` — the command palette opens
-2. Type `itms` — you should see **implementation-plan** appear
+2. Type `itms` — you should see **itms-implementation-plan** appear
 3. Select it and press Enter
 4. Copilot executes the prompt and generates a fresh implementation plan
 
