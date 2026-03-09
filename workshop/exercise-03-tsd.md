@@ -24,13 +24,13 @@ The TSD bridges business requirements and engineering. Your **TSD Author** agent
 Copy and paste this prompt:
 
 ```
-Read doc/brd.md and req.md, then create a complete Technical Specification Document saved as doc/tsd.md.
+Read #brd.md and #requirement.md, then create a complete Technical Specification Document saved as doc/tsd.md.
 
 Requirements:
 - Include a Mermaid system architecture diagram showing all major components
 - Include a Mermaid ER diagram for the database schema (include all tables needed for leave management)
 - Design REST API endpoints for: authentication, user management, leave requests, leave approvals, attendance, and reporting
-- Recommend a technology stack with justifications (consider the Azure deployment constraint from req.md)
+- Recommend a technology stack with justifications (consider the Azure deployment constraint from #requirement.md)
 - Include security architecture addressing the OWASP Top 10
 - Define a CI/CD pipeline architecture
 - Trace every technical decision back to a BRD requirement ID
@@ -41,7 +41,7 @@ Requirements:
 ## Step 3 — Monitor the Plan
 
 The TSD agent will plan its approach. Look for:
-- It plans to read BOTH `doc/brd.md` AND `req.md`
+- It plans to read BOTH `#brd.md` AND `#requirement.md`
 - It mentions Mermaid diagrams
 - It is NOT writing application code
 
@@ -49,19 +49,7 @@ Approve the plan.
 
 ---
 
-## Step 4 — Inspect the Output
-
-Open `doc/tsd.md` and verify:
-
-- [ ] Mermaid architecture diagram renders correctly in VS Code preview (`Ctrl+Shift+V`)
-- [ ] ER diagram includes tables: `users`, `leave_requests`, `leave_balances`, `leave_types`, `attendance_records` (or similar)
-- [ ] API endpoints are listed in the endpoint catalogue
-- [ ] Security section mentions JWT, RBAC, and at least 3 OWASP categories
-- [ ] Technology stack table exists with justifications
-
----
-
-## Step 5 — Ask for a Specific Architecture Decision (Optional)
+## Step 4 — Ask for a Specific Architecture Decision (Optional)
 
 Try this follow-up to see how the agent reasons:
 
