@@ -2,7 +2,7 @@
 
 > **Audience**: Developers, Tech Leads, Architects  
 > **Total Duration**: ~90 minutes (16 exercises × 3–5 min each)  
-> **Pre-requisites**: VS Code with GitHub Copilot Chat extension, Node/Python/Java runtime, Git CLI, GitHub Copilot access, GitHub MCP.
+> **Pre-requisites**: VS Code with GitHub Copilot Chat extension, Node/Python/Java runtime, Git CLI, GitHub Copilot access, GitHub MCP, Mermaid extension for VS code.
 
 ---
 

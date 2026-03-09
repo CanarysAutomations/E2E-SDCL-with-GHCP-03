@@ -14,13 +14,12 @@ The **Background Agent** runs Copilot tasks in the background — inside a sandb
 - Parallel workstreams (you write one feature while Copilot writes another)
 
 When the background agent finishes, it opens a pull request with the generated changes for you to review.
-
 ---
 
 ## Step 1 — Launch the Background Agent
 
 In Copilot Chat:
-1. Click the **`...` (More) menu** or look for the **Background Agent** option (cloud/async icon)
+1. Click the **agent menu** or look for the **Copilot CLI**
 2. Select **Start Background Task** (or `New Background Agent Session`)
 
 > **Alternative**: Use `Ctrl+Shift+P` → **GitHub Copilot: New Background Agent**
@@ -90,9 +89,10 @@ While the background agent runs:
 
 When the background agent finishes (typically 5–15 minutes for this task), it will:
 1. Show a notification in VS Code
-2. Open (or link to) the pull request it created
+2. Open Chat session
+3. Review and Click on "apply" to apply the generated code changes to the branch
 
-Review the PR:
+Review the changes:
 - [ ] All 4 endpoints are implemented
 - [ ] Dependency blocking logic works correctly (task becomes Blocked when dependency is incomplete)
 - [ ] Task history records all assignment and status changes

@@ -35,7 +35,7 @@ Continue until the application starts successfully and GET /api/v1/health return
 
 The agent will run commands in the terminal, read the output, and iterate on fixes. You'll see it:
 1. Run `npm install` (or equivalent)
-2. Run `npm run build`
+2. Run `npm run build`(or equivalent)
 3. Fix any TypeScript errors or import issues
 4. Start the server
 5. Test the health endpoint
@@ -49,6 +49,8 @@ Once the app builds, send:
 ```
 Run the unit tests:
 npm run test:unit
+
+ or any equivalent command for the tech stack.
 
 For any failing tests:
 1. Show the test name and failure message

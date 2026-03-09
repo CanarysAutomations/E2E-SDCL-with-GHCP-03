@@ -17,7 +17,7 @@ By this point, your **copilot-instructions.md** is active, so every piece of cod
 ## Step 1 — Switch to Agent Mode
 
 In Copilot Chat:
-1. Make sure the **default agent** is selected (not a custom agent)
+1. Make sure the **local agent** is selected (not a custom agent)
 2. Ensure mode is set to **Agent** (not Ask or Plan)
 
 ---
@@ -27,7 +27,7 @@ In Copilot Chat:
 Send this prompt:
 
 ```
-Read doc/tsd.md and .github/copilot-instructions.md.
+Read #tsd.md and the API Design section. Then, scaffold the initial project structure for the ITMS REST API.
 
 Scaffold the initial project structure for the ITMS REST API. Create:
 - The root configuration files (package.json / pyproject.toml / pom.xml — match the stack from copilot-instructions.md)
@@ -49,7 +49,7 @@ Watch the agent create files. When it pauses to ask about choices, make decision
 Send this prompt:
 
 ```
-Now implement the Authentication API following doc/tsd.md's API Design section.
+Now implement the Authentication API following #tsd.md's API Design section.
 
 Create these endpoints:
 1. POST /api/v1/auth/login
