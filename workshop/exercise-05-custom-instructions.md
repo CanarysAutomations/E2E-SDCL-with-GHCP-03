@@ -20,10 +20,10 @@ Choose the tech stack you want to build the LAMS application with:
 
 | Option | Language | Framework | Database |
 |--------|----------|-----------|----------|
-| A | TypeScript / Node.js | Express or Fastify | PostgreSQL |
-| B | Python | FastAPI or Django REST | PostgreSQL |
-| C | Java | Spring Boot | PostgreSQL or Oracle |
-| D | C# / .NET | ASP.NET Core | PostgreSQL or SQL Server |
+| A | TypeScript / Node.js | Express or Fastify | PostgreSQL or SQL of your choice |
+| B | Python | FastAPI or Django REST | PostgreSQL or SQL of your choice |
+| C | Java | Spring Boot | PostgreSQL or Oracle or SQL of your choice |
+| D | C# / .NET | ASP.NET Core | PostgreSQL or SQL Server or SQL of your choice |
 
 > The rest of the workshop will use whichever you pick. **Option A (TypeScript/Node.js)** is the default reference if you're unsure.
 
@@ -36,7 +36,7 @@ Switch back to the **default Copilot agent** (not a custom agent).
 Copy and paste this prompt, **replacing `[YOUR CHOICE]`** with your selection:
 
 ```
-I am building a REST API application using [YOUR CHOICE — e.g., TypeScript with Express and PostgreSQL].
+I am building a REST API application using [YOUR CHOICE — e.g., TypeScript with Express and YOUR CHOICE DATABASE].
 
 Create a .github/copilot-instructions.md file with workspace-wide coding standards for this project.
 
@@ -69,14 +69,14 @@ Open `.github/copilot-instructions.md` and check:
 
 ## Step 4 — Test That Instructions Are Active
 
-Close and reopen Copilot Chat. Send this test prompt in the **default agent**:
+Close and reopen Copilot Chat. Send this test prompt in the **local agent**:
 
 ```
 Write a simple function that takes a user ID and returns user details from the database.
 ```
 
 Observe that Copilot:
-- Uses your chosen language
+- Uses your chosen language and SQL database
 - Uses parameterized queries (not string concatenation)
 - Includes error handling
 - Follows the response envelope format you defined
