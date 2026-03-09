@@ -1,71 +1,52 @@
 # Exercise 03 — Generate the Technical Specification Document
 
-**Duration**: 4 minutes  
+**Duration**: 3 minutes  
 **Copilot Feature**: TSD Custom Agent  
-**Goal**: Use the TSD agent to design the system architecture from the BRD.
+**Goal**: Use the TSD agent to design system architecture from the BRD.
 
 ---
 
-## Background
+## Step 1 — Select the TSD Agent and Send the Prompt
 
-The TSD bridges business requirements and engineering. Your **TSD Author** agent acts as a Solutions Architect — it reads the BRD, proposes technology choices, designs the data model and API contracts, and produces a document the development team can build from.
-
----
-
-## Step 1 — Switch to the TSD Agent
-
-1. In Copilot Chat, click the agent selector
-2. Select **TSD Author**
-
----
-
-## Step 2 — Send the TSD Generation Prompt
-
-Copy and paste this prompt:
+1. Switch to **TSD Author** in the agent selector
+2. Send this prompt:
 
 ```
 Read #brd.md and #requirement.md, then create a complete Technical Specification Document saved as doc/tsd.md.
 
-Requirements:
 - Include a Mermaid system architecture diagram showing all major components
-- Include a Mermaid ER diagram for the database schema (include all tables needed for task management)
+- Include a Mermaid ER diagram for the database schema
 - Design REST API endpoints for: authentication, user management, task management, task assignment, task dependencies, and reporting
-- Recommend a technology stack with justifications (consider the Azure deployment constraint from #requirement.md)
+- Recommend a technology stack with justifications
 - Include security architecture addressing the OWASP Top 10
 - Define a CI/CD pipeline architecture
 - Trace every technical decision back to a BRD requirement ID
 ```
 
----
-
-## Step 3 — Monitor the Plan
-
-The TSD agent will plan its approach. Look for:
-- It plans to read BOTH `#brd.md` AND `#requirement.md`
-- It mentions Mermaid diagrams
-- It is NOT writing application code
-
-Approve the plan.
+> **⚡ Tip:** While the agent generates the TSD, read Exercise 04 and have the FRD prompt ready.
 
 ---
 
-## Step 4 — Ask for a Specific Architecture Decision (Optional)
+## Step 2 — Review the Output
 
-Try this follow-up to see how the agent reasons:
-
-```
-The system needs to handle email notifications and Teams webhook alerts. 
-Update the Integration Points section in doc/tsd.md to cover:
-- SendGrid for email (async via a message queue)
-- Microsoft Teams webhook for manager alerts
-- Include a sequence diagram showing the task status update notification flow
-```
+- [ ] Mermaid diagrams are present (architecture + ER)
+- [ ] REST API endpoints are documented in a table
+- [ ] Technology stack has justifications
 
 ---
 
 ## Key Takeaway
 
-> The architecture designed here becomes the **source of truth** for the next exercises. Every API you build, every table you create, and every test you write will trace back to `doc/tsd.md`. This is how Copilot becomes a true SDLC co-pilot — not just a code generator, but an architectural collaborator.
+> The TSD becomes the **source of truth** for every subsequent exercise — the API design drives Ex09 coding, the ER diagram drives Ex12 database work, and the deployment architecture drives Ex16 IaC.
+
+---
+
+> **⚡ Extension** (skip if short on time): Add notification architecture with a follow-up prompt:
+> ```
+> Update the Integration Points section in doc/tsd.md to cover SendGrid email
+> (async via message queue) and Microsoft Teams webhook. Include a sequence diagram
+> showing the task status update → notification flow.
+> ```
 
 ---
 

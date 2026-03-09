@@ -1,130 +1,83 @@
 # Exercise 09 — Build APIs with the Local Agent
 
-**Duration**: 5 minutes  
+**Duration**: 4 minutes  
 **Copilot Feature**: Local (Default) Agent — Agentic Coding  
-**Goal**: Use Copilot's local agent to scaffold the project and implement 2–3 REST API endpoints end-to-end.
+**Goal**: Scaffold the project and implement core REST API endpoints end-to-end.
 
 ---
 
-## Background
+## Step 1 — Scaffold the Project
 
-The **Local Agent** (also called the default Copilot agent in Agent mode) can read your workspace files, create new files, edit existing ones, run terminal commands, and iterate — all within your local VS Code environment. It's the primary tool for hands-on coding.
-
-By this point, your **copilot-instructions.md** is active, so every piece of code the agent writes will follow your team's standards automatically.
-
----
-
-## Step 1 — Switch to Agent Mode
-
-In Copilot Chat:
-1. Make sure the **local agent** is selected (not a custom agent)
-2. Ensure mode is set to **Agent** (not Ask or Plan)
-
----
-
-## Step 2 — Scaffold the Project Structure
-
-Send this prompt:
+Switch to **Agent mode** (default agent). Send this prompt:
 
 ```
-Read #tsd.md and the API Design section. Then, scaffold the initial project structure for the ITMS REST API.
+Read #tsd.md and the API Design section. Scaffold the initial ITMS REST API project:
+- Root config files (match stack from copilot-instructions.md)
+- Folder structure: src/routes/, src/controllers/, src/services/, src/repositories/, src/models/, src/middleware/, src/config/
+- App entry point on port 3000 (or 8000 for Python)
+- Environment variable loading (.env.example with all required vars)
+- Health check: GET /api/v1/health → { status: "ok", timestamp, version: "1.0.0" }
+- README.md with setup instructions
 
-Scaffold the initial project structure for the ITMS REST API. Create:
-- The root configuration files (package.json / pyproject.toml / pom.xml — match the stack from copilot-instructions.md)
-- The folder structure: src/routes/, src/controllers/, src/services/, src/repositories/, src/models/, src/middleware/, src/config/
-- A basic Express/FastAPI/Spring Boot app entry point that starts on port 3000 / 8000
-- Environment variable loading (.env.example with all required variables)
-- A basic health check endpoint: GET /api/v1/health → { status: "ok", timestamp: <ISO>, version: "1.0.0" }
-- A README.md with setup instructions
-
-Do NOT implement any business logic yet — just the scaffolding.
+Do NOT implement business logic — scaffolding only.
 ```
 
-Watch the agent create files. When it pauses to ask about choices, make decisions based on your tech stack from Exercise 05.
+> **⚡ Tip:** While the agent scaffolds, copy the Background Agent prompt from Exercise 10 — you can submit it immediately after Step 3 so it runs in parallel.
 
 ---
 
-## Step 3 — Implement the Authentication API
-
-Send this prompt:
+## Step 2 — Implement the Authentication API
 
 ```
-Now implement the Authentication API following #tsd.md's API Design section.
+Implement the Authentication API from #tsd.md:
 
-Create these endpoints:
 1. POST /api/v1/auth/login
    - Accepts: { email, password }
-   - Validates input (reject if email invalid format, password < 8 chars)
+   - Validates input (reject invalid email format, password < 8 chars)
    - Returns: { success: true, data: { token, refreshToken, expiresIn, user: { id, name, email, role } } }
    - On failure: { success: false, error: { code: "INVALID_CREDENTIALS", message: "..." } }
    - Rate limit: 5 attempts per minute per IP
 
-2. POST /api/v1/auth/logout
-   - Requires JWT auth header
-   - Invalidates the current token
+2. POST /api/v1/auth/logout — requires JWT, invalidates token
 
-3. POST /api/v1/auth/refresh
-   - Accepts: { refreshToken }
-   - Returns: new access token
+3. POST /api/v1/auth/refresh — accepts { refreshToken }, returns new access token
 
-Apply all standards from .github/copilot-instructions.md:
-- Input validation using schema library
-- Parameterized queries only
-- Structured logging with request ID
-- Proper HTTP status codes (200, 400, 401, 429)
+Apply all standards from .github/copilot-instructions.md.
 ```
 
 ---
 
-## Step 4 — Implement the Task Management API
-
-Send this prompt:
+## Step 3 — Implement the Task Management API
 
 ```
-Implement the Task Management API endpoints from doc/tsd.md.
+Implement the Task Management API from doc/tsd.md:
 
-Create:
 1. POST /api/v1/tasks
-   - Auth required: any role
+   - Auth required
    - Accepts: { title, description, priority, assignedUserId, dueDate }
-   - Validates: title required, priority must be Low/Medium/High, dueDate must be valid
+   - Validates: title required, priority is Low/Medium/High, dueDate is valid
    - Returns: created task with status "To Do"
 
 2. GET /api/v1/tasks
-   - Auth required
-   - Query params: status, priority, assignedUserId, dueDate, page, limit
+   - Auth required, query params: status, priority, assignedUserId, page, limit
 
 3. PATCH /api/v1/tasks/:id/status
-   - Auth required
    - Accepts: { status } (To Do / In Progress / Blocked / Completed)
    - Records status change in history
-   - Returns: updated task
 
-Create the corresponding service, repository, and model/schema files.
-Follow the folder structure created in the previous step.
+Create corresponding service, repository, and model/schema files.
 ```
+
+> **⚡ Now launch the Background Agent from Exercise 10** with the task assignment endpoints — it will run while you continue with subsequent exercises.
 
 ---
 
-## Step 5 — Verify the APIs
+## Verify
 
-Once the agent finishes, send:
-
-```
-Start the application in the terminal and test all three endpoints with curl:
-1. Test POST /api/v1/auth/login with valid credentials
-2. Test POST /api/v1/tasks with the JWT from step 1
-3. Test GET /api/v1/tasks to see the created task
-
-Show me the curl commands and expected responses.
-```
+- [ ] `GET /api/v1/health` returns `{ status: "ok" }`
+- [ ] `POST /api/v1/auth/login` and `POST /api/v1/tasks` are implemented
+- [ ] Folder structure matches `src/routes/, src/services/, src/repositories/`
 
 ---
 
-## Key Takeaway
-
-> Notice how the local agent follows the patterns in your `copilot-instructions.md` automatically — response envelope format, input validation, parameterized queries. The instructions you wrote in Exercise 05 are now silently shaping every file, and you don't have to repeat those standards in every prompt.
-
----
-
-**Next**: [Exercise 10 — Background Agent Task](exercise-10-background-agent.md)
+**Next**: [Exercise 10 — Background Agent](exercise-10-background-agent.md)

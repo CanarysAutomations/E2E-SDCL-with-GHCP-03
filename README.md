@@ -1,7 +1,7 @@
 # E2E SDLC with GitHub Copilot — Workshop
 
 > **Audience**: Developers, Tech Leads, Architects  
-> **Total Duration**: ~90 minutes (16 exercises × 3–5 min each)  
+> **Total Duration**: ~55 minutes (see table below for per-exercise timings)  
 > **Pre-requisites**: VS Code with GitHub Copilot Chat extension, Node/Python/Java runtime, Git CLI, GitHub Copilot access, GitHub MCP, Mermaid extension for VS code.
 
 ---
@@ -32,23 +32,39 @@ The system enables teams to create, assign, and track tasks, manage task depende
 | # | Exercise | Copilot Feature | Duration |
 |---|----------|----------------|----------|
 | 01 | [Setup & Custom Agents](workshop/exercise-01-setup-agents.md) | Custom Agents (`.agent.md`) | 5 min |
-| 02 | [Generate BRD](workshop/exercise-02-brd.md) | BRD Custom Agent | 4 min |
-| 03 | [Generate TSD](workshop/exercise-03-tsd.md) | TSD Custom Agent | 4 min |
-| 04 | [Generate FRD](workshop/exercise-04-frd.md) | FRD Custom Agent | 4 min |
+| 02 | [Generate BRD](workshop/exercise-02-brd.md) | BRD Custom Agent | 3 min |
+| 03 | [Generate TSD](workshop/exercise-03-tsd.md) | TSD Custom Agent | 3 min |
+| 04 | [Generate FRD](workshop/exercise-04-frd.md) | FRD Custom Agent | 3 min |
 | 05 | [Custom Instructions](workshop/exercise-05-custom-instructions.md) | `.instructions.md` | 3 min |
-| 06 | [Plan Mode – Implementation Plan](workshop/exercise-06-plan-mode.md) | Plan Mode | 4 min |
-| 07 | [Create Implementation Prompt File](workshop/exercise-07-implementation-prompt.md) | Prompt Files | 3 min |
-| 08 | [Create GitHub Issues via MCP](workshop/exercise-08-github-issues.md) | GitHub MCP + Prompt File | 5 min |
-| 09 | [Build APIs with Local Agent](workshop/exercise-09-api-local-agent.md) | Local (Default) Agent | 5 min |
-| 10 | [Background Agent Task](workshop/exercise-10-background-agent.md) | Background Agent | 3 min |
-| 11 | [Context Map Skill](workshop/exercise-11-context-map.md) | Skills (`SKILL.md`) | 4 min |
-| 12 | [Database & SQL / PL/SQL](workshop/exercise-12-database-sql.md) | Local Agent + Instructions | 5 min |
-| 13 | [Unit & Functional Tests](workshop/exercise-13-testing.md) | Local Agent + Prompt File | 5 min |
-| 14 | [Security Review](workshop/exercise-14-security.md) | Security Prompt File | 4 min |
-| 15 | [Build & Debug](workshop/exercise-15-build-debug.md) | Local Agent + Terminal | 5 min |
-| 16 | [IaC & CI/CD](workshop/exercise-16-iac-cicd.md) | Custom Agent + Prompt File | 5 min |
+| 06 | [Plan Mode – Implementation Plan](workshop/exercise-06-plan-mode.md) | Plan Mode | 3 min |
+| 07 | [Create Implementation Prompt File](workshop/exercise-07-implementation-prompt.md) | Prompt Files | 2 min |
+| 08 | [Create GitHub Issues via MCP](workshop/exercise-08-github-issues.md) | GitHub MCP + Prompt File | 4 min |
+| 09 | [Build APIs with Local Agent](workshop/exercise-09-api-local-agent.md) | Local (Default) Agent | 4 min |
+| 10 | [Background Agent Task](workshop/exercise-10-background-agent.md) | Background Agent | 2 min ¹ |
+| 11 | [Context Map Skill](workshop/exercise-11-context-map.md) | Skills (`SKILL.md`) | 3 min |
+| 12 | [Database & SQL / PL/SQL](workshop/exercise-12-database-sql.md) | Local Agent + Instructions | 4 min |
+| 13 | [Unit & Functional Tests](workshop/exercise-13-testing.md) | Local Agent + Prompt File | 4 min |
+| 14 | [Security Review](workshop/exercise-14-security.md) | Security Prompt File | 3 min |
+| 15 | [Build & Debug](workshop/exercise-15-build-debug.md) | Local Agent + Terminal | 4 min |
+| 16 | [IaC & CI/CD](workshop/exercise-16-iac-cicd.md) | Custom Agent + Prompt File | 4 min |
 
 ---
+
+---
+
+## Speed Tips — Parallel Execution
+
+The workshop is designed so agent wait time is **never idle time**. Use these strategies:
+
+| While this runs... | Do this in parallel |
+|--------------------|---------------------|
+| BRD agent (Ex02) | Read Exercise 03 and have TSD prompt ready |
+| TSD agent (Ex03) | Read Exercise 04 and have FRD prompt ready |
+| FRD agent (Ex04) | Choose your tech stack for Exercise 05 |
+| Background Agent (Ex10) | Complete Exercises 11, 12, and 13 — then review the PR |
+| Security review agent (Ex14) | Read the IaC/CI/CD exercise and plan your infrastructure |
+
+> **Rule of thumb**: As soon as you send a prompt, switch to the next exercise and read ahead. Return to the previous exercise when the agent finishes.
 
 ## Workspace Structure After Workshop
 
@@ -106,3 +122,5 @@ SDLC2/
 ---
 
 > **Instructor Note**: Each exercise has a `> Instructor Guide` section visible only in the markdown source. Exercises are designed so attendees never need to copy code — they copy **prompts** and let Copilot generate the output.
+
+

@@ -1,34 +1,16 @@
 # Exercise 08 — Create GitHub Issues via MCP
 
-**Duration**: 5 minutes  
-**Copilot Feature**: GitHub MCP Server + Prompt File  
-**Goal**: Convert the implementation plan into GitHub Issues using the GitHub MCP and the pre-built issues prompt file.
+**Duration**: 4 minutes  
+**Copilot Feature**: GitHub MCP Server  
+**Goal**: Connect the GitHub MCP and convert the implementation plan into GitHub Issues automatically.
 
 ---
 
-## Background
+## Part A — Setup (one-time)
 
-The **Model Context Protocol (MCP)** lets Copilot interact with external systems. The **GitHub MCP server** gives Copilot the ability to create issues, pull requests, branches, and more — directly from chat.
+> **Skip to Part B if GitHub MCP is already configured in your workspace.**
 
-In this exercise, you'll connect the GitHub MCP and use the `github-issues.prompt.md` file to automatically create work items from your implementation plan.
-
----
-
-## Part A — Install the GitHub MCP Server (One-Time Setup)
-
-### Step 1 — Install the GitHub MCP
-
-> **If GitHub MCP is already configured in your workspace, skip to Part B.**
-
-Open VS Code Command Palette (`Ctrl+Shift+P`) and search for:
-```
-MCP: Add Server
-```
-
-Select **GitHub MCP** from the list, or add it manually:
-
-1. Open (or create) `.vscode/mcp.json` in your workspace
-2. Add the following configuration:
+Open (or create) `.vscode/mcp.json`:
 
 ```json
 {
@@ -36,93 +18,58 @@ Select **GitHub MCP** from the list, or add it manually:
     "github": {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${input:github_token}"
-      }
+      "env": { "GITHUB_PERSONAL_ACCESS_TOKEN": "${input:github_token}" }
     }
   },
   "inputs": [
-    {
-      "id": "github_token",
-      "type": "promptString",
-      "description": "GitHub Personal Access Token",
-      "password": true
-    }
+    { "id": "github_token", "type": "promptString", "description": "GitHub Personal Access Token", "password": true }
   ]
 }
 ```
 
-3. Create a GitHub Personal Access Token at https://github.com/settings/tokens
-   - Required scopes: `repo`, `issues`, `read:org`
-4. Reload the VS Code window — GitHub MCP will start automatically
+Create a PAT at https://github.com/settings/tokens (scopes: `repo`, `issues`, `read:org`) and reload VS Code.
 
 ---
 
-## Part B — Create a GitHub Repository (if not already done)
-
-If you don't have a repository yet, create one:
+## Part B — Create a Repository
 
 ```
-Using the GitHub MCP, create a new repository named "itms-app" with:
+Using the GitHub MCP, create a repository named "itms-app":
 - Description: "Intelligent Task Management System — Workshop App"
-- Private repository
-- Initialize with a README
+- Private, initialized with README
 ```
 
-Note your repository as `[your-username]/itms-app` — you'll need this.
+Note your repo as `[your-username]/itms-app`.
 
 ---
 
 ## Part C — Generate Issues from the Implementation Plan
 
-### Step 1 — Run the Issues Prompt File
-
-In Copilot Chat, type `/` and select **GitHub Issues Generator** (from `.github/prompts/github-issues.prompt.md`).
-
-Or manually send this prompt:
-
 ```
-Read doc/implementation-plan.md and convert it into GitHub Issues for the repository [your-username]/itms-app.
+Read doc/implementation-plan.md and convert it into GitHub Issues for [your-username]/itms-app.
 
-For each task in the implementation plan, create a GitHub issue with:
-- A clear title
-- A description explaining what needs to be done
+For each task:
+- Clear title and description
 - Acceptance criteria as checkboxes
-- Appropriate labels: backend, database, testing, infrastructure, security
-- Milestone matching the Phase (Phase 0, Phase 1, etc.)
+- Labels: backend, database, testing, infrastructure, security
+- Milestone matching the Phase
 
-Start by creating the milestones first, then create issues for Phase 0 and Phase 1 tasks.
+Create milestones first, then create issues for Phase 0 and Phase 1 tasks.
 Use the GitHub MCP to create them directly.
 ```
 
-> Replace `[YOUR-USERNAME]` with your actual GitHub username.
-
 ---
 
-## Step 2 — Verify on GitHub
-
-Open your repository on GitHub (https://github.com/[your-username]/itms-app/issues) and verify:
+## Verify
 
 - [ ] Milestones created for each Phase
-- [ ] Issues have labels (backend, database, etc.)
-- [ ] Issues have acceptance criteria as checkboxes
+- [ ] Issues have labels and acceptance criteria checkboxes
 - [ ] Issues are assigned to the correct milestone
 
 ---
 
-## Step 3 — Create a Project Board (Optional)
-
-```
-Using the GitHub MCP, add all the Phase 1 issues to a new GitHub Project board 
-called "ITMS Sprint 1". Set up three columns: To Do, In Progress, Done.
-```
+> **⚡ Extension**: `Using the GitHub MCP, add all Phase 1 issues to a new Project board "ITMS Sprint 1" with columns: To Do / In Progress / Done.`
 
 ---
 
-## Key Takeaway
-
-> The MCP transforms Copilot from a **code editor tool** into a **project management tool**. Going from a Functional Requirements Document to a structured, labelled, milestoned GitHub issue backlog in under 5 minutes is the kind of productivity multiplier that changes how teams operate. The same MCP can later be used to track progress, comment on issues, and link PRs — all from chat.
-
----
-
-**Next**: [Exercise 09 — Build APIs with Local Agent](exercise-09-api-local-agent.md)
+**Next**: [Exercise 09 — Build APIs with the Local Agent](exercise-09-api-local-agent.md)

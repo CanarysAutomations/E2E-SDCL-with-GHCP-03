@@ -1,100 +1,61 @@
 # Exercise 06 — Plan Mode: Generate Implementation Plan
 
-**Duration**: 4 minutes  
-**Copilot Feature**: Plan Mode (Copilot Edits)  
-**Goal**: Use Plan Mode to let Copilot reason through the full implementation strategy before writing any code.
-
----
-
-## Background
-
-**Plan Mode** in GitHub Copilot is a deliberate step where Copilot analyzes the task, identifies all files and components affected, and presents an execution plan **before** taking any action. You review and approve — or modify — the plan before Copilot touches a single file.
-
-This is especially valuable for large tasks (like "implement the entire task module") where you want to verify the approach first.
+**Duration**: 3 minutes  
+**Copilot Feature**: Plan Mode  
+**Goal**: Use Plan Mode to reason through the full implementation strategy before writing any code.
 
 ---
 
 ## Step 1 — Switch to Plan Mode
 
-In Copilot Chat:
-1. Click the **mode selector** at the bottom-left of the chat panel
-2. Select **Plan** (this may appear as `Plan Mode` or the pencil/plan icon)
-
-> You should see a visual indicator that Plan mode is active.
+In Copilot Chat, click the mode selector at the bottom-left → **Plan**.
 
 ---
 
-## Step 2 — Send the Implementation Planning Prompt
-
-Copy and paste this prompt:
+## Step 2 — Send the Planning Prompt
 
 ```
 Read #frd.md and #tsd.md carefully.
 
-Generate a complete, phased implementation plan for the Intelligent Task Management System (ITMS).
-
-Structure the plan as:
+Generate a complete, phased implementation plan for the ITMS:
 - Phase 0: Project setup, folder structure, database migration tooling, CI skeleton
 - Phase 1: Authentication & User Management (registration, login, JWT, RBAC)
-- Phase 2: Task Management (task creation, assignment, dependencies, status tracking)
-- Phase 3: Task Reporting & Progress Summary (project progress, task filters, export)
+- Phase 2: Task Management (creation, assignment, dependencies, status tracking)
+- Phase 3: Reporting & Progress Summary (filters, export)
 - Phase 4: Notifications (email via SendGrid, Teams webhooks)
-- Phase 5: Reporting (monthly reports, CSV/PDF export)
-- Phase 6: Testing, security hardening, and documentation
 
 For each phase, list tasks with:
-- Task ID (T-001, T-002...)
-- Title
-- Effort (S/M/L where S=<4h, M=4-8h, L=8-16h)
-- FRD reference (FR-ID or US-ID)
-- Whether it can run in parallel or must be sequential
-- Whether it's a good candidate for Background Agent (long, self-contained tasks)
+- Task ID (T-001…), Title, Effort (S/M/L), FRD reference, Parallel or Sequential, Background Agent candidate?
 
 Do NOT create any files yet. Show me the plan first.
 ```
 
----
-
-## Step 3 — Review the Plan
-
-Copilot will display the plan before doing anything. Check:
-
-- [ ] All 6 phases are covered
-- [ ] Phase 0 includes project scaffolding tasks
-- [ ] Tasks reference FRD IDs
-- [ ] Some tasks are flagged as Background Agent candidates
-- [ ] Effort estimates seem reasonable (Phase 1 ≈ 3–5 days total)
+> **⚡ Tip:** While reviewing the plan, have Exercise 07 open and ready — you'll create the prompt file immediately after approving.
 
 ---
 
-## Step 4 — Refine the Plan
+## Step 3 — Approve and Save
 
-Ask Copilot to adjust if needed. Example refinements:
+Review the plan (check all phases covered, tasks reference FRD IDs), then switch back to **Agent mode** and send:
 
 ```
-Move the JWT middleware task to Phase 0 since all phases depend on it.
-Also add a task for setting up the OpenAPI/Swagger documentation scaffold in Phase 0.
+Save the implementation plan to doc/implementation-plan.md
 ```
-
-After refinement, **approve the plan** and switch back to **Agent mode** to save the plan as a file.
 
 ---
 
 ## Verify
 
-Open `doc/implementation-plan.md` and confirm:
-
-- [ ] All phases are present
+- [ ] `doc/implementation-plan.md` exists with all phases
 - [ ] Tasks have IDs, effort estimates, and FRD references
-- [ ] Background Agent candidates are flagged
-- [ ] Total effort per phase is summarized
+- [ ] Some tasks are flagged as Background Agent candidates
 
 ---
 
 ## Key Takeaway
 
-> Plan Mode prevents "tunnel vision" — where Copilot dives into implementation and creates a solution that doesn't fit the full picture. By reviewing the plan first, you catch architectural gaps and poor task ordering **before** they become code debt. On real projects, this 5-minute review often saves hours of rework.
+> Plan Mode prevents tunnel vision — Copilot shows its full strategy before writing a single line of code. A 3-minute review here saves hours of rework.
 
 ---
 
-**Next**: [Exercise 07 — Create Implementation Prompt File](exercise-07-implementation-prompt.md)
+**Next**: [Exercise 07 — Create Implementation Prompt File](exercise-07-implementation-prompt.md)\n

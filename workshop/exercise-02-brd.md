@@ -1,70 +1,43 @@
 # Exercise 02 — Generate the Business Requirements Document
 
-**Duration**: 4 minutes  
+**Duration**: 3 minutes  
 **Copilot Feature**: BRD Custom Agent  
-**Goal**: Use the BRD agent to generate a professional BRD from `requirement.md`.
+**Goal**: Use the BRD agent to generate `doc/brd.md` from `requirement.md`.
 
 ---
 
-## Background
-
-Now that your `BRD Author` agent is set up, you'll use it to produce a formal Business Requirements Document. The agent will read `requirement.md`, apply BA best practices, structure the document properly, and save it to `doc/brd.md` — without you writing a single line.
-
----
-
-## Step 1 — Open Copilot Chat and Select the BRD Agent
+## Step 1 — Select the BRD Agent and Send the Prompt
 
 1. Open Copilot Chat (`Ctrl+Alt+I`)
-2. Click the **agent/model selector** at the top of the chat input
-3. Select **BRD Author**
-
-You should see the agent name appear in the chat header.
-
----
-
-## Step 2 — Send the BRD Generation Prompt
-
-Copy and paste the following prompt into the chat:
+2. Select **BRD Author** from the agent dropdown
+3. Send this prompt:
 
 ```
 Read the project requirements from #requirement.md and create a comprehensive Business Requirements Document. Save it as doc/brd.md.
 
-Make sure to:`
 - Number all requirements uniquely (BR-F-001, BR-NF-001, BR-R-001...)
 - Include a stakeholder table with interests and influence levels
 - Include a risks and mitigations table
 - Add a glossary of domain terms
-- Keep it suitable for both business and technical readers
 ```
 
----
-
-## Step 3 — Review Copilot's Plan
-
-The agent will show you a **plan** before writing. Review it to ensure:
-- It understood the domain (task management)
-- It plans to create `doc/brd.md`
-- It isn't proposing any code
-
-Click **Continue** (or **Keep**) to proceed.
+> **⚡ Tip:** While the agent generates the BRD (1–2 min), read the next exercise so you can immediately send the TSD prompt when the BRD is ready.
 
 ---
 
-## Step 4 — Inspect the Output
+## Step 2 — Review the Output
 
-Once Copilot finishes, open `doc/brd.md`. Check:
+When `doc/brd.md` appears, quickly verify:
 
-- [ ] Executive Summary captures the business problem
-- [ ] Functional requirements numbered BR-F-001…
-- [ ] Non-functional requirements have measurable criteria (e.g., "response time < 2 seconds")
-- [ ] All task features from `requirement.md` are captured
-- [ ] A stakeholder table exists with Developer, Team Lead, Project Manager, QA Engineer rows
+- [ ] Functional requirements are numbered BR-F-001…
+- [ ] Non-functional requirements have measurable acceptance criteria
+- [ ] A stakeholder table and risks table are present
 
 ---
 
 ## Key Takeaway
 
-> The BRD agent gives Copilot a **persistent, reusable role**. Compare this to asking the default agent "write a BRD" — you'd need to re-explain the structure every time. Agents encode your standards once and apply them consistently.
+> The BRD agent gives Copilot a **persistent, reusable role**. You never have to re-explain BA document structure — the agent encodes your standards once and applies them every time.
 
 ---
 
