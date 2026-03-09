@@ -1,0 +1,87 @@
+# Exercise 02 — Generate the Business Requirements Document
+
+**Duration**: 4 minutes  
+**Copilot Feature**: BRD Custom Agent  
+**Goal**: Use the BRD agent to generate a professional BRD from `req.md`.
+
+---
+
+## Background
+
+Now that your `BRD Author` agent is set up, you'll use it to produce a formal Business Requirements Document. The agent will read `req.md`, apply BA best practices, structure the document properly, and save it to `doc/brd.md` — without you writing a single line.
+
+---
+
+## Step 1 — Open Copilot Chat and Select the BRD Agent
+
+1. Open Copilot Chat (`Ctrl+Alt+I`)
+2. Click the **agent/model selector** at the top of the chat input
+3. Select **BRD Author**
+
+You should see the agent name appear in the chat header.
+
+---
+
+## Step 2 — Send the BRD Generation Prompt
+
+Copy and paste the following prompt into the chat:
+
+```
+Read the project requirements from req.md and create a comprehensive Business Requirements Document. Save it as doc/brd.md.
+
+Make sure to:
+- Use MoSCoW prioritization for all requirements
+- Number all requirements uniquely (BR-F-001, BR-NF-001, BR-R-001...)
+- Include a stakeholder table with interests and influence levels
+- Include a risks and mitigations table
+- Add a glossary of domain terms
+- Keep it suitable for both business and technical readers
+```
+
+---
+
+## Step 3 — Review Copilot's Plan
+
+The agent will show you a **plan** before writing. Review it to ensure:
+- It understood the domain (leave management)
+- It plans to create `doc/brd.md`
+- It isn't proposing any code
+
+Click **Continue** (or **Approve**) to let it proceed.
+
+---
+
+## Step 4 — Inspect the Output
+
+Once Copilot finishes, open `doc/brd.md`. Check:
+
+- [ ] Executive Summary captures the business problem
+- [ ] At least 10 functional requirements numbered BR-F-001…
+- [ ] Non-functional requirements have measurable criteria (e.g., "response time < 2 seconds")
+- [ ] All leave types from `req.md` are captured
+- [ ] A stakeholder table exists with Employee, Manager, HR Admin, IT Admin rows
+
+---
+
+## Step 5 — Refine (Optional, 1 min)
+
+If any section is thin or missing, use a follow-up prompt:
+
+```
+The Business Rules section is missing. Please add business rules covering:
+- Leave carry-forward policy (max 5 days)
+- Medical certificate requirement for sick leave > 3 days
+- Multi-level approval chain (Manager → HR)
+- Pro-rated annual leave for new joiners
+Add these as BR-R-001, BR-R-002, BR-R-003, BR-R-004 in the existing doc/brd.md.
+```
+
+---
+
+## Key Takeaway
+
+> The BRD agent gives Copilot a **persistent, reusable role**. Compare this to asking the default agent "write a BRD" — you'd need to re-explain the structure every time. Agents encode your standards once and apply them consistently.
+
+---
+
+**Next**: [Exercise 03 — Generate TSD](exercise-03-tsd.md)

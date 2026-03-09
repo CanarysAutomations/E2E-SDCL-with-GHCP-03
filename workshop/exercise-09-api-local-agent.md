@@ -1,0 +1,131 @@
+# Exercise 09 — Build APIs with the Local Agent
+
+**Duration**: 5 minutes  
+**Copilot Feature**: Local (Default) Agent — Agentic Coding  
+**Goal**: Use Copilot's local agent to scaffold the project and implement 2–3 REST API endpoints end-to-end.
+
+---
+
+## Background
+
+The **Local Agent** (also called the default Copilot agent in Agent mode) can read your workspace files, create new files, edit existing ones, run terminal commands, and iterate — all within your local VS Code environment. It's the primary tool for hands-on coding.
+
+By this point, your **copilot-instructions.md** is active, so every piece of code the agent writes will follow your team's standards automatically.
+
+---
+
+## Step 1 — Switch to Agent Mode
+
+In Copilot Chat:
+1. Make sure the **default agent** is selected (not a custom agent)
+2. Ensure mode is set to **Agent** (not Ask or Plan)
+
+---
+
+## Step 2 — Scaffold the Project Structure
+
+Send this prompt:
+
+```
+Read doc/tsd.md and .github/copilot-instructions.md.
+
+Scaffold the initial project structure for the LAMS REST API. Create:
+- The root configuration files (package.json / pyproject.toml / pom.xml — match the stack from copilot-instructions.md)
+- The folder structure: src/routes/, src/controllers/, src/services/, src/repositories/, src/models/, src/middleware/, src/config/
+- A basic Express/FastAPI/Spring Boot app entry point that starts on port 3000 / 8000
+- Environment variable loading (.env.example with all required variables)
+- A basic health check endpoint: GET /api/v1/health → { status: "ok", timestamp: <ISO>, version: "1.0.0" }
+- A README.md with setup instructions
+
+Do NOT implement any business logic yet — just the scaffolding.
+```
+
+Watch the agent create files. When it pauses to ask about choices, make decisions based on your tech stack from Exercise 05.
+
+---
+
+## Step 3 — Implement the Authentication API
+
+Send this prompt:
+
+```
+Now implement the Authentication API following doc/tsd.md's API Design section.
+
+Create these endpoints:
+1. POST /api/v1/auth/login
+   - Accepts: { email, password }
+   - Validates input (reject if email invalid format, password < 8 chars)
+   - Returns: { success: true, data: { token, refreshToken, expiresIn, user: { id, name, email, role } } }
+   - On failure: { success: false, error: { code: "INVALID_CREDENTIALS", message: "..." } }
+   - Rate limit: 5 attempts per minute per IP
+
+2. POST /api/v1/auth/logout
+   - Requires JWT auth header
+   - Invalidates the current token
+
+3. POST /api/v1/auth/refresh
+   - Accepts: { refreshToken }
+   - Returns: new access token
+
+Apply all standards from .github/copilot-instructions.md:
+- Input validation using schema library
+- Parameterized queries only
+- Structured logging with request ID
+- Proper HTTP status codes (200, 400, 401, 429)
+```
+
+---
+
+## Step 4 — Implement the Leave Request API
+
+Send this prompt:
+
+```
+Implement the Leave Request API endpoints from doc/tsd.md.
+
+Create:
+1. POST /api/v1/leave/requests
+   - Auth required: Employee or Manager role
+   - Accepts: { leaveTypeId, startDate, endDate, reason }
+   - Validates: startDate must be in future, endDate >= startDate, reason required
+   - Validates: employee has sufficient leave balance for the requested type
+   - Returns: created leave request with status "PENDING"
+
+2. GET /api/v1/leave/requests
+   - Auth required
+   - Employees see only their own requests
+   - Managers see their team's requests
+   - HR Admin sees all requests
+   - Query params: status, startDate, endDate, page, limit
+
+3. GET /api/v1/leave/requests/:id
+   - Returns single request; access controlled by role
+
+Create the corresponding service, repository, and model/schema files.
+Follow the folder structure created in the previous step.
+```
+
+---
+
+## Step 5 — Verify the APIs
+
+Once the agent finishes, send:
+
+```
+Start the application in the terminal and test all three endpoints with curl:
+1. Test POST /api/v1/auth/login with valid credentials
+2. Test POST /api/v1/leave/requests with the JWT from step 1
+3. Test GET /api/v1/leave/requests to see the pending request
+
+Show me the curl commands and expected responses.
+```
+
+---
+
+## Key Takeaway
+
+> Notice how the local agent follows the patterns in your `copilot-instructions.md` automatically — response envelope format, input validation, parameterized queries. The instructions you wrote in Exercise 05 are now silently shaping every file, and you don't have to repeat those standards in every prompt.
+
+---
+
+**Next**: [Exercise 10 — Background Agent Task](exercise-10-background-agent.md)
