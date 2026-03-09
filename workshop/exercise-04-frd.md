@@ -24,7 +24,7 @@ The FRD is the document development teams and QA engineers work from directly. I
 Copy and paste this prompt:
 
 ```
-Read doc/brd.md, doc/tsd.md, and req.md. Create a comprehensive Functional Requirements Document saved as doc/frd.md.
+Read #brd.md, #tsd.md, and #requirement.md. Create a comprehensive Functional Requirements Document saved as doc/frd.md.
 
 Include:
 - A User Roles & Permissions Matrix (Employee / Manager / HR Admin / IT Admin vs all features)
