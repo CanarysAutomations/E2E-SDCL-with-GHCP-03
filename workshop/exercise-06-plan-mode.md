@@ -29,7 +29,7 @@ In Copilot Chat:
 Copy and paste this prompt:
 
 ```
-Read doc/frd.md and doc/tsd.md carefully.
+Read #frd.md and #tsd.md carefully.
 
 Generate a complete, phased implementation plan for the Intelligent Task Management System (ITMS).
 
@@ -77,17 +77,6 @@ Also add a task for setting up the OpenAPI/Swagger documentation scaffold in Pha
 ```
 
 After refinement, **approve the plan** and switch back to **Agent mode** to save the plan as a file.
-
----
-
-## Step 5 — Save the Plan
-
-Once you approve the plan in the chat, switch to **Agent mode** and send:
-
-```
-Save the implementation plan we just created as doc/implementation-plan.md
-Format it as a clean markdown document with tables for each phase.
-```
 
 ---
 
