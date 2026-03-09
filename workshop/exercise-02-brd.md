@@ -55,7 +55,7 @@ Click **Continue** (or **Keep**) to proceed.
 Once Copilot finishes, open `doc/brd.md`. Check:
 
 - [ ] Executive Summary captures the business problem
-- [ ] At least 10 functional requirements numbered BR-F-001…
+- [ ] Functional requirements numbered BR-F-001…
 - [ ] Non-functional requirements have measurable criteria (e.g., "response time < 2 seconds")
 - [ ] All task features from `requirement.md` are captured
 - [ ] A stakeholder table exists with Developer, Team Lead, Project Manager, QA Engineer rows

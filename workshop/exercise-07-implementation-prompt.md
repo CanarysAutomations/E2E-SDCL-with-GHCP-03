@@ -49,14 +49,14 @@ Open it and read it. Notice:
 
 ## Step 3 — Create a Custom Project-Specific Version
 
-Now create **your own** version tailored to your chosen tech stack. In Copilot Chat (default agent), send:
+Now create **your own** version tailored to your chosen tech stack. In Copilot Chat (local agent), send:
 
 ```
-Create a prompt file at .github/prompts/itms-implementation-plan.prompt.md
+Create a prompt file at #itms-implementation-plan.prompt.md
 
 This prompt is specifically for the Intelligent Task Management System (ITMS) project.
 When invoked, it should:
-1. Read doc/frd.md and doc/tsd.md
+1. Read #frd.md and #tsd.md
 2. Generate a phased implementation plan with our specific tech stack: [YOUR STACK e.g. TypeScript/Express/PostgreSQL]
 3. Reference the correct folder structure: src/routes/, src/services/, src/repositories/, src/models/
 4. Include database migration tasks using our tooling convention
@@ -75,7 +75,7 @@ Format: phases as H2 headers, tasks as a table with columns: ID | Task | Effort 
 Test your new prompt file:
 
 1. In Copilot Chat, type `/` — the command palette opens
-2. Type `itms` — you should see **itms-implementation-plan** appear
+2. Type `itms` — you should see **implementation-plan** appear
 3. Select it and press Enter
 4. Copilot executes the prompt and generates a fresh implementation plan
 
