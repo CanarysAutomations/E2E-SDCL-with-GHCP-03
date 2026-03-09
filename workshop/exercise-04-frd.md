@@ -24,45 +24,17 @@ The FRD is the document development teams and QA engineers work from directly. I
 Copy and paste this prompt:
 
 ```
-Read #brd.md, #tsd.md, and #requirement.md. Create a comprehensive Functional Requirements Document saved as doc/frd.md.
+Read #requirement.md. Create a comprehensive Functional Requirements Document saved as doc/frd.md.
 
 Include:
-- A User Roles & Permissions Matrix (Employee / Manager / HR Admin / IT Admin vs all features)
-- Detailed use cases for: Leave Request (UC-001), Leave Approval (UC-002), Leave Cancellation (UC-003), Leave Balance Inquiry (UC-004), Attendance Check-In/Out (UC-005), HR Monthly Report (UC-006)
+- A User Roles & Permissions Matrix (Developer / Team Lead / Project Manager / QA Engineer vs all features)
+- Detailed use cases for: Task Creation (UC-001), Task Assignment (UC-002), Task Dependency Management (UC-003), Task Status Tracking (UC-004), Task Listing and Filtering (UC-005), Project Progress Summary (UC-006)
 - User stories for each use case with Given/When/Then acceptance criteria in Gherkin format
-- A complete Functional Requirements Catalogue with FR-IDs linked to BRD BR-IDs
-- Data validation rules for all input fields
-- All email/notification triggers with recipient and content
+- A complete Functional Requirements Catalogue with FR-IDs linked to requirement sections
+- Data validation rules for all input fields (Task ID, title, priority, status, dates)
+- All notification triggers for task reassignment, dependency blocking, and status changes with recipient and content
 - Error scenarios and user-facing error messages
 ```
-
----
-
-## Step 3 — Inspect the Output
-
-Open `doc/frd.md` and verify:
-
-- [ ] Permissions matrix table exists — each role has ✅ / ❌ for each feature
-- [ ] At least 6 use cases with actor, preconditions, normal flow, and alternates
-- [ ] User stories use "As a [role], I want [action], so that [benefit]" format
-- [ ] Every user story has at least 2 Given/When/Then scenarios
-- [ ] FR-IDs link back to BR-F-IDs from the BRD
-- [ ] Story point estimates are assigned (1/2/3/5/8)
-
----
-
-## Step 4 — Generate a Sprint Backlog View (Optional)
-
-Send this follow-up to see the work broken into a sprint:
-
-```
-Based on doc/frd.md, create a Sprint 1 backlog containing the highest-priority user stories 
-that deliver the core leave request and approval flow as a working end-to-end feature.
-Format as a markdown table with columns: US-ID | Title | Story Points | Priority | Dependencies.
-Append this as a "Sprint 1 Backlog" section at the end of doc/frd.md.
-```
-
----
 
 ## Checkpoint — Docs Complete ✅
 
