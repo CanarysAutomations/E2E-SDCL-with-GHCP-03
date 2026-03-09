@@ -30,7 +30,6 @@ Copy and paste the following prompt into the chat:
 Read the project requirements from req.md and create a comprehensive Business Requirements Document. Save it as doc/brd.md.
 
 Make sure to:
-- Use MoSCoW prioritization for all requirements
 - Number all requirements uniquely (BR-F-001, BR-NF-001, BR-R-001...)
 - Include a stakeholder table with interests and influence levels
 - Include a risks and mitigations table
@@ -47,7 +46,7 @@ The agent will show you a **plan** before writing. Review it to ensure:
 - It plans to create `doc/brd.md`
 - It isn't proposing any code
 
-Click **Continue** (or **Approve**) to let it proceed.
+Click **Continue** (or **Keep**) to proceed.
 
 ---
 
@@ -58,23 +57,8 @@ Once Copilot finishes, open `doc/brd.md`. Check:
 - [ ] Executive Summary captures the business problem
 - [ ] At least 10 functional requirements numbered BR-F-001…
 - [ ] Non-functional requirements have measurable criteria (e.g., "response time < 2 seconds")
-- [ ] All leave types from `req.md` are captured
+- [ ] All leave types from `requirement.md` are captured
 - [ ] A stakeholder table exists with Employee, Manager, HR Admin, IT Admin rows
-
----
-
-## Step 5 — Refine (Optional, 1 min)
-
-If any section is thin or missing, use a follow-up prompt:
-
-```
-The Business Rules section is missing. Please add business rules covering:
-- Leave carry-forward policy (max 5 days)
-- Medical certificate requirement for sick leave > 3 days
-- Multi-level approval chain (Manager → HR)
-- Pro-rated annual leave for new joiners
-Add these as BR-R-001, BR-R-002, BR-R-003, BR-R-004 in the existing doc/brd.md.
-```
 
 ---
 
