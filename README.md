@@ -96,11 +96,13 @@ SDLC2/
 
 ## Getting Started
 
-1. Open this folder in VS Code
-2. Ensure **GitHub Copilot** and **GitHub Copilot Chat** extensions are installed and signed in
-3. Open the Copilot Chat panel (`Ctrl+Alt+I`)
-4. Start with [Exercise 01](workshop/exercise-01-setup-agents.md)
+[![Use this Template](https://img.shields.io/badge/Use%20this%20Template-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=CanarysAutomations&template_name=speckit-and-beyond&owner=%40me&name=speckit-and-beyond&description=Agent-Driven+Spec+Development:+The+FlavorHub+Crisis&visibility=public)
 
+1. Configure your GitHub token for MCP access by setting `GITHUB_TOKEN` in your environment
+1. Open the cloned repository in VS Code
+1. Ensure **GitHub Copilot** and **GitHub Copilot Chat** extensions are installed and signed in
+1. Open the Copilot Chat panel (`Ctrl+Alt+I`)
+1. Start with [Exercise 01](workshop/exercise-01-setup-agents.md)
 ---
 
 > **Instructor Note**: Each exercise has a `> Instructor Guide` section visible only in the markdown source. Exercises are designed so attendees never need to copy code — they copy **prompts** and let Copilot generate the output.
