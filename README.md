@@ -2,13 +2,26 @@
 
 > **Audience**: Developers, Tech Leads, Architects  
 > **Total Duration**: ~90 minutes (16 exercises × 3–5 min each)  
-> **Pre-requisites**: VS Code with GitHub Copilot Chat extension, Node/Python/Java runtime, Git CLI
+> **Pre-requisites**: VS Code with GitHub Copilot Chat extension, Node/Python/Java runtime, Git CLI, GitHub Copilot access, GitHub MCP.
 
 ---
 
 ## What You Will Build
 
-A **Smart Leave & Attendance Management System (LAMS)** — a realistic business application that covers every phase of the Software Development Life Cycle, all guided by GitHub Copilot.
+An **Intelligent Task Management System (ITMS)** — a realistic business application that covers every phase of the Software Development Life Cycle, all guided by GitHub Copilot.
+
+The system enables teams to create, assign, and track tasks, manage task dependencies, monitor project progress, and identify bottlenecks — all key pain points for software teams working across multiple members and workstreams.
+
+**Core capabilities from [`req.md`](req.md):**
+
+| Capability | Description |
+|---|---|
+| **Task Creation** | Create tasks with ID, title, priority, status, assignee, and due date |
+| **Task Assignment** | Assign or reassign tasks to team members |
+| **Dependency Management** | Link tasks with dependencies; auto-mark blocked tasks |
+| **Status Tracking** | Track To Do / In Progress / Blocked / Completed with history |
+| **Filtering & Listing** | Query tasks by status, priority, assignee, or due date |
+| **Progress Summary** | Dashboard showing total, completed, in-progress, and blocked counts |
 
 > The requirement is already in [`req.md`](req.md). You do **not** need to write the application yourself — Copilot does the heavy lifting. Your job is to learn how to **direct Copilot effectively** through each SDLC phase.
 
