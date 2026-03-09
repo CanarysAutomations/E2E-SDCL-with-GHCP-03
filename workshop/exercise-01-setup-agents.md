@@ -60,7 +60,6 @@ Create the file `.github/agents/brd.agent.md` and paste the content below:
 
 ```markdown
 ---
----
 name: BRD Author
 description: "Use when you need to create or update a Business Requirements Document (BRD). Triggered by: create BRD, generate business requirements document, write BRD, analyze requirements and create BRD."
 tools: [vscode, execute, read, agent, browser, com.atlassian/atlassian-mcp-server/fetch, edit, search, web, todo]
@@ -151,7 +150,6 @@ Transform raw project requirements into a professional, traceable BRD.
 Create `.github/agents/tsd.agent.md` and paste:
 
 ```markdown
----
 ---
 name: TSD Author
 description: "Use when you need to create or update a Technical Specification Document (TSD). Triggered by: create TSD, generate technical specification, write technical design, create system architecture document."
@@ -257,7 +255,6 @@ Transform business requirements into a precise technical blueprint.
 Create `.github/agents/frd.agent.md` and paste:
 
 ```markdown
----
 ---
 name: FRD Author
 description: "Use when you need to create or update a Functional Requirements Document (FRD). Triggered by: create FRD, generate functional requirements, write use cases, create user stories, develop FRD from BRD."
