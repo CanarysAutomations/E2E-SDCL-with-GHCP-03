@@ -6,6 +6,15 @@
 
 ---
 
+> ---
+> 🟡 **OPTIONAL EXERCISE**
+>
+> This exercise is **not required** to complete the mandatory track. It generates the full SQL schema, migrations, and stored procedures. Complete it if database-layer code generation is relevant to your role, or revisit it after the workshop.
+>
+> **Best after**: Exercise 11 (or Exercise 09 if skipping Ex 11) &nbsp;|&nbsp; **Return to mandatory track**: [Exercise 13 — Unit & Functional Tests](exercise-13-testing.md)
+> ---
+
+
 ## Background
 
 Most business applications have critical business logic in the database layer — task dependency validation, transactional status updates, audit triggers. This exercise generates the complete SQL layer for ITMS, including PL/SQL (Oracle) or PL/pgSQL (PostgreSQL) stored procedures.
@@ -156,4 +165,4 @@ Check `db/` folder:
 
 ---
 
-**Next**: [Exercise 13 — Unit & Functional Tests](exercise-13-testing.md)
+**Return to Mandatory Track →**: [Exercise 13 — Unit & Functional Tests](exercise-13-testing.md)

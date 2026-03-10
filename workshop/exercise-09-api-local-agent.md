@@ -127,4 +127,9 @@ Show me the curl commands and expected responses.
 
 ---
 
-**Next**: [Exercise 10 — Background Agent Task](exercise-10-background-agent.md)
+**Next**: [Exercise 13 — Unit & Functional Tests](exercise-13-testing.md)
+
+> 🟡 **Optional exercises available here** — pick any before continuing to Exercise 13:
+> - [Exercise 10 — Background Agent Task](exercise-10-background-agent.md) — delegate a long task to run asynchronously while you work
+> - [Exercise 11 — Context Map Skill](exercise-11-context-map.md) — generate a structured codebase map that enriches all subsequent Copilot prompts
+> - [Exercise 12 — Database & SQL / PL/SQL](exercise-12-database-sql.md) — generate the full DB schema, migrations, and stored procedures

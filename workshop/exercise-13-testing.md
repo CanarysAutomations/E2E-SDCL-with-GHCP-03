@@ -16,6 +16,8 @@ Tests are where the FRD's acceptance criteria become code. Each **Given/When/The
 
 Send this prompt in Copilot Chat (Agent mode):
 
+> **Note**: Adjust the prompt based on your tech stack (Node.js, Python, Java). And if you have skipped Exercise 11, make sure to update the prompt by removing the context map references `.github/skills/context-map/context-map.md`.
+
 ```
 Reference the context map at .github/skills/context-map/context-map.md and .github/copilot-instructions.md.
 
@@ -40,7 +42,7 @@ Set up the testing infrastructure for the ITMS project:
 Send this prompt:
 
 ```
-Read doc/frd.md (focus on FR-IDs for task management) and the service files in src/services/.
+Read #frd.md (focus on FR-IDs for task management) and the service files in src/services/.
 
 Generate unit tests in tests/unit/ for the Task Service:
 
@@ -70,7 +72,7 @@ Each test must include Arrange / Act / Assert structure as comments.
 Send this prompt:
 
 ```
-Read doc/frd.md (focus on the Gherkin acceptance criteria in user stories US-001 to US-006).
+Read #frd.md (focus on the Gherkin acceptance criteria in user stories US-001 to US-006).
 
 Generate integration tests in tests/integration/ for the Task Management API:
 

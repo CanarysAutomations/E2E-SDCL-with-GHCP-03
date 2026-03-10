@@ -1,7 +1,7 @@
 # E2E SDLC with GitHub Copilot — Workshop
 
 > **Audience**: Developers, Tech Leads, Architects  
-> **Total Duration**: ~90 minutes (16 exercises × 3–5 min each)  
+> **Total Duration**: ~50 min mandatory + ~30 min optional (see two-track map below)  
 > **Pre-requisites**: VS Code with GitHub Copilot Chat extension, Node/Python/Java runtime, Git CLI, GitHub Copilot access, GitHub MCP, Mermaid extension for VS code.
 
 ---
@@ -41,6 +41,14 @@ Participants should have the following set up before starting the workshop:
 
 ## Workshop Map
 
+> **Two-Track Design**: Complete the **Mandatory Track** first (~50 min) — it covers every SDLC phase end-to-end with no gaps. Then pick any **Optional** exercises based on time and interest. Optional exercises are self-contained; no mandatory exercise depends on them.
+
+---
+
+### 🔵 Mandatory Track (~50 minutes)
+
+These exercises form the core SDLC journey. Each builds directly on the previous one and introduces a distinct GitHub Copilot feature.
+
 | # | Exercise | Copilot Feature | Duration |
 |---|----------|----------------|----------|
 | 01 | [Setup & Custom Agents](workshop/exercise-01-setup-agents.md) | Custom Agents (`.agent.md`) | 5 min |
@@ -50,20 +58,34 @@ Participants should have the following set up before starting the workshop:
 | 05 | [Custom Instructions](workshop/exercise-05-custom-instructions.md) | `.instructions.md` | 3 min |
 | 06 | [Plan Mode – Implementation Plan](workshop/exercise-06-plan-mode.md) | Plan Mode | 4 min |
 | 07 | [Create Implementation Prompt File](workshop/exercise-07-implementation-prompt.md) | Prompt Files | 3 min |
-| 08 | [Create GitHub Issues via MCP](workshop/exercise-08-github-issues.md) | GitHub MCP + Prompt File | 5 min |
 | 09 | [Build APIs with Local Agent](workshop/exercise-09-api-local-agent.md) | Local (Default) Agent | 5 min |
-| 10 | [Background Agent Task](workshop/exercise-10-background-agent.md) | Background Agent | 3 min |
-| 11 | [Context Map Skill](workshop/exercise-11-context-map.md) | Skills (`SKILL.md`) | 4 min |
-| 12 | [Database & SQL / PL/SQL](workshop/exercise-12-database-sql.md) | Local Agent + Instructions | 5 min |
 | 13 | [Unit & Functional Tests](workshop/exercise-13-testing.md) | Local Agent + Prompt File | 5 min |
 | 14 | [Security Review](workshop/exercise-14-security.md) | Security Prompt File | 4 min |
 | 15 | [Build & Debug](workshop/exercise-15-build-debug.md) | Local Agent + Terminal | 5 min |
-| 16 | [IaC & CI/CD](workshop/exercise-16-iac-cicd.md) | Custom Agent + Prompt File | 5 min |
+
+> **Why these 11?** They cover every key Copilot feature — Custom Agents → Prompt Files → Plan Mode → Local Agent → Testing → Security — mirroring a real SDLC from requirements to a running, tested application.
 
 ---
-> The workshop has been tested with the following AI models on GitHub Copilot: `calude sonet 4.6`,`GPT-5.2-codex`,`GPT-5.3-codex`. Results may vary with different models. If you encounter issues, try switching to one of these models in your Copilot settings.
 
-> **Note:** Exercises are designed to be completed sequentially, but feel free to jump around based on your interests. 
+### 🟡 Optional Track (~30 minutes — pick any, in any order)
+
+These exercises are self-contained. No mandatory exercise depends on them. Complete them if time allows, or revisit them after the workshop.
+
+| # | Exercise | Copilot Feature | Duration | Best After |
+|---|----------|----------------|----------|------------|
+| 08 | [Create GitHub Issues via MCP](workshop/exercise-08-github-issues.md) | GitHub MCP + Prompt File | 5 min | Ex 07 |
+| 10 | [Background Agent Task](workshop/exercise-10-background-agent.md) | Background Agent | 3 min | Ex 09 |
+| 11 | [Context Map Skill](workshop/exercise-11-context-map.md) | Skills (`SKILL.md`) | 4 min | Ex 09 |
+| 12 | [Database & SQL / PL/SQL](workshop/exercise-12-database-sql.md) | Local Agent + Instructions | 5 min | Ex 11 |
+| 16 | [IaC & CI/CD](workshop/exercise-16-iac-cicd.md) | Custom Agent + Prompt File | 5 min | Ex 15 |
+
+> **Note on Ex 08**: Requires a GitHub repository and a Personal Access Token with `repo` and `issues` scopes. Skip if GitHub MCP is not pre-configured in your environment.
+> **Note on Ex 12**: References the context map from Ex 11. If you skip Ex 11, remove the `#context-map.md` reference from the prompts before sending.
+
+---
+> The workshop has been tested with the following AI models on GitHub Copilot: `Claude Sonnet 4.6`,`GPT-5.2-codex`,`GPT-5.3-codex`. Results may vary with different models. If you encounter issues, try switching to one of these models in your Copilot settings.
+
+> **Note:** Complete **Mandatory** exercises in order (each artifact feeds the next). **Optional** exercises can be done in any order after their recommended prerequisite, or revisited after the workshop.
 
 ## Workspace Structure After Workshop
 

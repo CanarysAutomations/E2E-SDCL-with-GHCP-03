@@ -6,6 +6,15 @@
 
 ---
 
+> ---
+> 🟡 **OPTIONAL EXERCISE**
+>
+> This exercise is **not required** to complete the mandatory track. The Background Agent runs tasks asynchronously in a sandboxed environment — it is self-contained and does not block any later exercise. Try it after Exercise 09 if time permits.
+>
+> **Best after**: Exercise 09 &nbsp;|&nbsp; **Return to mandatory track**: [Exercise 13 — Unit & Functional Tests](exercise-13-testing.md)
+> ---
+
+
 ## Background
 
 The **Background Agent** runs Copilot tasks in the background — inside a sandboxed environment, asynchronously — while you keep working in your main VS Code session. It's perfect for:
@@ -19,7 +28,7 @@ When the background agent finishes, it opens a pull request with the generated c
 ## Step 1 — Launch the Background Agent
 
 In Copilot Chat:
-1. Click the **agent menu** or look for the **Copilot CLI**
+1. Click the **agent menu** or look for the **Copilot CLI**, make sure you have installed the [Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli) before proceeding.
 2. Select **Start Background Task** (or `New Background Agent Session`)
 
 > **Alternative**: Use `Ctrl+Shift+P` → **GitHub Copilot: New Background Agent**
@@ -108,4 +117,6 @@ Merge the PR if it looks correct.
 
 ---
 
-**Next**: [Exercise 11 — Context Map Skill](exercise-11-context-map.md)
+**Next optional**: [Exercise 11 — Context Map Skill](exercise-11-context-map.md)
+
+**Return to Mandatory Track →**: [Exercise 13 — Unit & Functional Tests](exercise-13-testing.md)

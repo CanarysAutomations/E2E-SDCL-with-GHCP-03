@@ -6,6 +6,15 @@
 
 ---
 
+> ---
+> 🟡 **OPTIONAL EXERCISE**
+>
+> This exercise is **not required** for the mandatory track. It is the infrastructure and deployment capstone — ideal if you have extra time after Exercise 15 or want to explore IaC and CI/CD automation with Copilot after the workshop.
+>
+> **Best after**: Exercise 15 &nbsp;|&nbsp; This is the final exercise in the workshop.
+> ---
+
+
 ## Background
 
 The final phase of SDLC is deployment infrastructure. The **DevOps Agent** (`devops.agent.md`) you created in Exercise 01's setup is a specialized agent that reads the TSD's deployment architecture and generates production-ready IaC and CI/CD configurations.

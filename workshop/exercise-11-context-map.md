@@ -6,6 +6,15 @@
 
 ---
 
+> ---
+> 🟡 **OPTIONAL EXERCISE**
+>
+> This exercise is **not required** to complete the mandatory track. The context map it produces gives Copilot richer codebase awareness, but Exercises 13–15 work without it. If you run this exercise, reference `context-map.md` in your prompts for Exercises 12 and 13.
+>
+> **Best after**: Exercise 09 &nbsp;|&nbsp; **Return to mandatory track**: [Exercise 13 — Unit & Functional Tests](exercise-13-testing.md)
+> ---
+
+
 ## Background
 
 A **Skill** is an on-demand workflow bundled in a `SKILL.md` file. Unlike instructions (always active) or agents (persona-driven), a skill is a **specific multi-step process** you invoke when you need it.
@@ -106,4 +115,6 @@ This single addition significantly reduces hallucinations (Copilot inventing fil
 
 ---
 
-**Next**: [Exercise 12 — Database & SQL / PL/SQL](exercise-12-database-sql.md)
+**Next optional**: [Exercise 12 — Database & SQL / PL/SQL](exercise-12-database-sql.md)
+
+**Return to Mandatory Track →**: [Exercise 13 — Unit & Functional Tests](exercise-13-testing.md)

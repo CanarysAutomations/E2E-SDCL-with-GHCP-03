@@ -146,4 +146,8 @@ Tell me which is wrong — the test or the implementation — before making any 
 
 ---
 
-**Next**: [Exercise 16 — IaC & CI/CD](exercise-16-iac-cicd.md)
+**🏁 Mandatory Track Complete!**
+
+You have completed all 11 mandatory exercises and experienced the full E2E SDLC lifecycle with GitHub Copilot — from requirements through architecture, implementation, testing, and security.
+
+> 🟡 **Optional capstone**: Continue with [Exercise 16 — IaC & CI/CD](exercise-16-iac-cicd.md) to generate Docker, Terraform/Bicep, and GitHub Actions pipelines for the ITMS application.
