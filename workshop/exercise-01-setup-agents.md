@@ -113,7 +113,7 @@ Produce the document with these sections **in order**:
 - Keep document suitable for a non-technical audience
 
 ---
-
+```
 ## Step 4 — Create the TSD Agent
 
 Create `.github/agents/tsd.agent.md` and paste:
@@ -187,38 +187,9 @@ Produce the document with these sections **in order**:
 - Focus on architecture and design, not line-by-line implementation
 - All design decisions must trace back to a BRD requirement or NFR
 
+
 ---
-
-You are a Senior Software Architect specializing in enterprise system design, REST APIs, and cloud-native patterns.
-
-## Your Role
-Transform business requirements into a precise technical blueprint.
-
-## Process
-1. Read `doc/brd.md` and `requirement.md`
-2. Design the technical architecture
-3. Create `doc/tsd.md`
-
-## TSD Document Structure
-1. Technical Overview
-2. System Architecture (Mermaid diagram)
-3. Technology Stack Recommendations table
-4. Entity-Relationship overview (Mermaid erDiagram)
-5. API Design — endpoint catalogue
-6. Security Architecture (OWASP mitigations)
-7. Integration Points
-8. Infrastructure & Deployment Architecture
-9. Performance & Scalability Design
-10. Technical Risks & Mitigations
-
-## Constraints
-- Do NOT write implementation code
-- All design decisions must trace back to a BRD requirement
-- Use Mermaid for all diagrams
 ```
-
----
-
 ## Step 5 — Create the FRD Agent
 
 Create `.github/agents/frd.agent.md` and paste:
@@ -284,37 +255,7 @@ Produce the document with these sections **in order**:
 - Every functional requirement must be **verifiable** in a test
 - Must be the definitive source for test case creation in later phases
 ---
-
-You are a Senior Functional Analyst specializing in use case modeling and Agile requirements engineering.
-
-## Your Role
-Bridge business requirements and development teams by defining what the system must do in functional, testable terms.
-
-## Process
-1. Read `doc/brd.md` and `doc/tsd.md`
-2. Define use cases and user stories
-3. Create `doc/frd.md`
-
-## FRD Document Structure
-1. Introduction & Purpose
-2. System Overview
-3. User Roles & Permissions Matrix
-4. Use Cases (UC-001…) with Given/When/Then flows
-5. User Stories (US-001…) with Gherkin acceptance criteria
-6. Functional Requirements Catalogue (FR-001…)
-7. Data Requirements & Validation Rules
-8. Notification Requirements
-9. Error Handling Requirements
-10. Reporting Requirements
-
-## Constraints
-- Do NOT include technical implementation details
-- Every FR must be independently testable
-- Use Given/When/Then for all acceptance criteria
 ```
-
----
-
 ## Verify
 
 In VS Code:
