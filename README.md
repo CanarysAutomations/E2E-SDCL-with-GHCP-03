@@ -27,6 +27,18 @@ The system enables teams to create, assign, and track tasks, manage task depende
 
 ---
 
+## Prerequisites
+
+Participants should have the following set up before starting the workshop:
+
+- [VS Code](https://code.visualstudio.com/download) with GitHub Copilot Chat extension
+- Node/Python/Java runtime/.net SDK (depending on your language choice)
+- GitHub Copilot access
+- [Git CLI](https://git-scm.com/install/)
+- GitHub Copilot CLI - install it from [here](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli)
+- [GitHub MCP](https://github.com/mcp/github/github-mcp-server)
+- [Mermaid extension](https://marketplace.visualstudio.com/items?itemName=MermaidChart.vscode-mermaid-chart) for VS code
+
 ## Workshop Map
 
 | # | Exercise | Copilot Feature | Duration |
@@ -49,6 +61,9 @@ The system enables teams to create, assign, and track tasks, manage task depende
 | 16 | [IaC & CI/CD](workshop/exercise-16-iac-cicd.md) | Custom Agent + Prompt File | 5 min |
 
 ---
+> The workshop has been tested with the following AI models on GitHub Copilot: `calude sonet 4.6`,`GPT-5.2-codex`,`GPT-5.3-codex`. Results may vary with different models. If you encounter issues, try switching to one of these models in your Copilot settings.
+
+> **Note:** Exercises are designed to be completed sequentially, but feel free to jump around based on your interests. 
 
 ## Workspace Structure After Workshop
 
