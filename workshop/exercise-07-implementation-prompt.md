@@ -51,6 +51,7 @@ Open it and read it. Notice:
 
 Now create **your own** version tailored to your chosen tech stack. In Copilot Chat (local agent), send:
 
+Use ```/create-prompt``` with name ```itms-implementation-plan``` and paste the following content:
 ```
 Create a prompt file at #itms-implementation-plan.prompt.md
 
