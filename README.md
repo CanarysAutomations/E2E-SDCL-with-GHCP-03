@@ -35,7 +35,7 @@ Participants should have the following set up before starting the workshop:
 - Node/Python/Java runtime/.net SDK (depending on your language choice)
 - GitHub Copilot access
 - [Git CLI](https://git-scm.com/install/)
-- GitHub Copilot CLI - install it from [here](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli)
+- [GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli)
 - [GitHub MCP](https://github.com/mcp/github/github-mcp-server)
 - [Mermaid extension](https://marketplace.visualstudio.com/items?itemName=MermaidChart.vscode-mermaid-chart) for VS code
 
