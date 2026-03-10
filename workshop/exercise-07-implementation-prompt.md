@@ -98,4 +98,6 @@ Notice the difference between:
 
 ---
 
-**Next**: [Exercise 08 — Create GitHub Issues via MCP](exercise-08-github-issues.md)
+**Next**: [Exercise 09 — Build APIs with Local Agent](exercise-09-api-local-agent.md)
+
+> 🟡 **Optional stop available**: If your GitHub repository and Personal Access Token are configured, try [Exercise 08 — Create GitHub Issues via MCP](exercise-08-github-issues.md) before continuing to Exercise 09.

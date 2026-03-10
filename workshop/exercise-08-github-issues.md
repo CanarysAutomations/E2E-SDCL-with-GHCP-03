@@ -6,6 +6,15 @@
 
 ---
 
+> ---
+> 🟡 **OPTIONAL EXERCISE**
+>
+> This exercise is **not required** to complete the mandatory track. It requires an active GitHub repository and a Personal Access Token with `repo` and `issues` scopes. Complete it here if your environment is configured, or revisit it independently after the workshop.
+>
+> **Best after**: Exercise 07 &nbsp;|&nbsp; **Return to mandatory track**: [Exercise 09 — Build APIs with Local Agent](exercise-09-api-local-agent.md)
+> ---
+
+
 ## Background
 
 The **Model Context Protocol (MCP)** lets Copilot interact with external systems. The **GitHub MCP server** gives Copilot the ability to create issues, pull requests, branches, and more — directly from chat.
@@ -25,32 +34,17 @@ Open VS Code Command Palette (`Ctrl+Shift+P`) and search for:
 MCP: Add Server
 ```
 
-Select **GitHub MCP** from the list, or add it manually:
+Select **GitHub MCP** from the registry:
 
-1. Open (or create) `.vscode/mcp.json` in your workspace
-2. Add the following configuration:
+1. In the  search box dialog, search for `github`
+2. Select the official [**GitHub MCP Server**](https://github.com/mcp/github/github-mcp-server) from the registry
+3. When prompted, enter your GitHub Personal Access Token
+  - Create one at https://github.com/settings/tokens if needed
+  - Required scopes: `repo`, `issues`, `read:org`
+4. Confirm the installation — VS Code will configure it automatically
+5. Reload the VS Code window — GitHub MCP will start automatically
 
-```json
-{
-  "servers": {
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${input:github_token}"
-      }
-    }
-  },
-  "inputs": [
-    {
-      "id": "github_token",
-      "type": "promptString",
-      "description": "GitHub Personal Access Token",
-      "password": true
-    }
-  ]
-}
-```
+For reference, see the [GitHub MCP Server repository](https://github.com/mcp/github/github-mcp-server).
 
 3. Create a GitHub Personal Access Token at https://github.com/settings/tokens
    - Required scopes: `repo`, `issues`, `read:org`
@@ -125,4 +119,4 @@ called "ITMS Sprint 1". Set up three columns: To Do, In Progress, Done.
 
 ---
 
-**Next**: [Exercise 09 — Build APIs with Local Agent](exercise-09-api-local-agent.md)
+**Return to Mandatory Track →**: [Exercise 09 — Build APIs with Local Agent](exercise-09-api-local-agent.md)

@@ -98,17 +98,6 @@ Create a doc/security-review-report.md summarizing:
 
 ---
 
-## Bonus: Add Security to CI Pipeline (Preview of Exercise 16)
-
-```
-Add a security scanning step to the CI pipeline (if it exists at .github/workflows/ci.yml):
-- Add npm audit / pip-audit / OWASP dependency check for dependency vulnerabilities
-- Add a static code analysis step using a free tool (semgrep or CodeQL)
-Note the step but don't implement the full pipeline yet — that's Exercise 16.
-```
-
----
-
 ## Key Takeaway
 
 > Security built into the workflow — not bolted on after — is what OWASP recommends as "Shift Left Security." By encoding the OWASP checklist in a reusable prompt file, your team runs the same security review every sprint, every PR. The prompt captures institutional knowledge about *what to look for* so no security engineer knowledge needs to be in every developer's head.
