@@ -83,7 +83,7 @@ These exercises are self-contained. No mandatory exercise depends on them. Compl
 > **Note on Ex 12**: References the context map from Ex 11. If you skip Ex 11, remove the `#context-map.md` reference from the prompts before sending.
 
 ---
-> The workshop has been tested with the following AI models on GitHub Copilot: `Claude Sonnet 4.6`,`GPT-5.2-codex`,`GPT-5.3-codex`. Results may vary with different models. If you encounter issues, try switching to one of these models in your Copilot settings.
+> The workshop has been tested with the following AI models on GitHub Copilot: `Claude Sonnet 4.6`,`GPT-5.3-codex`. Results may vary with different models. If you encounter issues, try switching to one of these models in your Copilot settings.
 
 > **Note:** Complete **Mandatory** exercises in order (each artifact feeds the next). **Optional** exercises can be done in any order after their recommended prerequisite, or revisited after the workshop.
 
